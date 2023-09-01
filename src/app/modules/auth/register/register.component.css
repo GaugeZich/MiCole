@@ -1,0 +1,6 @@
+.cuadrado {
+    width: 300px;           /* Ancho de 150 píxeles */
+    height: 300px;          /* Alto de 150 píxeles */
+    background: #1382ED;        /* Fondo de color  */
+    border: 1px solid #000; /* Borde color negro y de 1 píxel de grosor */
+  }
