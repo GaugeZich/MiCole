@@ -1,0 +1,28 @@
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened">
+        <a>Cuenta</a>
+        <hr>
+        <a>Configuración</a>
+        <hr>
+        <a>Favorito</a>
+        <hr>
+        <a>Ayuda</a>
+        <hr>
+        <!-- Espaciador -->
+        <div class="spacer-bottom"></div>
+        <hr>
+        <div class="center">
+            <span class="texto_contacto">Contacto:</span>
+            <span>
+                micoleappcipo@gmail.com
+                <br>
+                +54 299 XXX XXXX
+                <br>
+                XXXXXXXXXXXXXXXX
+            </span>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button mat-button (click)="opened=!opened">Toggle</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
