@@ -2,25 +2,40 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { RegisterComponent } from './register/register.component';
 
-//material
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-
-//
 
 @NgModule({
   declarations: [
-    RegisterComponent
+
+    RegisterComponent,
+
+    LoginComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
+
     MatInputModule,
     MatFormFieldModule,
-    MatIconModule
-  ]
+    MatIconModule,
+  
+    // MATERIAL
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    // ANGULAR
+    FormsModule
+  ],
+  exports: [
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule
+  ],
+  providers: [ AuthService ] // proveedor -> servicio
 })
 export class AuthModule { }
