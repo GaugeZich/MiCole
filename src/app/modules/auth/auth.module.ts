@@ -17,12 +17,11 @@ import { FormsModule } from '@angular/forms';
 
 // SERVICIOS
 import { AuthService } from './services/auth.service';
+import {FirestoreService} from 'src/app/shared/services/firestore.service';
 
 @NgModule({
   declarations: [
-
     RegisterComponent,
-
     LoginComponent
   ],
   imports: [
@@ -50,6 +49,7 @@ import { AuthService } from './services/auth.service';
     MatSelectModule,
     FormsModule
   ],
-  providers: [ AuthService ] // proveedor -> servicio
+  providers: [ AuthService, FirestoreService ] // proveedor -> servicio
+  
 })
 export class AuthModule { }

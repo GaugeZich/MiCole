@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,13 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule,
 
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    AppRoutingModule
   ]
 })
 export class SharedModule { }

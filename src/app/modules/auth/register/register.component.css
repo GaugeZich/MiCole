@@ -1,3 +1,22 @@
 .background {
     background: #1382ED;        /* Fondo de color  */
-  }
+}
+
+.container{
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.boton{
+  width: 120px;
+  margin: auto;
+}
+
+.contenedor{
+  
+  background-color: #1382ED;
+  float: left;
+  padding: 10px;
+} 
