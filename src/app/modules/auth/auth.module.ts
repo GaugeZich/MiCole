@@ -17,6 +17,10 @@ import { FormsModule } from '@angular/forms';
 
 // SERVICIOS
 import { AuthService } from './services/auth.service';
+//cosas nuevas 
+
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { AuthService } from './services/auth.service';
     MatFormFieldModule,
     MatSelectModule,
     // ANGULAR
-    FormsModule
+    FormsModule,
+    //cosas nuevas
+    MatDividerModule
+  ,
   ],
   exports: [
     MatIconModule,
@@ -40,7 +47,10 @@ import { AuthService } from './services/auth.service';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    LoginComponent,
+    //cosas nuevas
+    MatDividerModule
   ],
   providers: [ AuthService ] // proveedor -> servicio
 })
