@@ -38,3 +38,41 @@
     width: 53%;
     font-size: large;
 }
+
+
+mat-sidenav-container{
+    height: calc(205vh - 115vh);
+}
+mat-sidenav{
+    width: 300px;
+    background-color: #eee;
+}
+a{
+    font-size: 46px;
+}
+hr{
+    height: 1px;
+    color: black;
+}
+.spacer-top{
+    margin-top: 100%;
+    margin-bottom: 0%;
+}
+.center{
+    text-align: center;
+    color: #919497;
+}
+.texto_contacto{
+    font-size: 25px;
+}
+.button{
+    width: 100%;
+    text-align: left;
+    font-size: 46px;
+    border-color: black;    
+    margin: 0px;
+    cursor: none;
+}
+.btn-group .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}

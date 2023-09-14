@@ -12,9 +12,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
+// Importaciones para sidebar
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
@@ -23,11 +26,11 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
-
+    MatInputModule,
+    MatSidenavModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
   ]
 })
 export class SharedModule { }
