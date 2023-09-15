@@ -1,12 +1,10 @@
-.background {
-    background: #1382ED;        /* Fondo de color  */
-}
 
-.container{
+.conteiner{
   display: flex;
   padding: 10px;
   text-align: center;
   justify-content: center;
+  align-self: center; 
 }
 
 .boton{
@@ -14,9 +12,24 @@
   margin: auto;
 }
 
-.contenedor{
-  
-  background-color: #1382ED;
-  float: left;
-  padding: 10px;
-} 
+.container{
+  width: 300px;           /* Ancho de píxeles */
+  height: 400px;          /* Alto de píxeles */
+  background: #1382ED;        /* Fondo de color  */
+  border-radius: 25px;
+}
+
+.example-container{
+  border-radius: 25px;
+}
+
+.padding{
+  padding-bottom: 20px;
+}
+.padding-top{
+  padding-top: 40px;
+}
+
+.div{
+  justify-content: center;
+}
