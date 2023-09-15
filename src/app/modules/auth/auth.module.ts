@@ -5,10 +5,12 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 
 
+
+
 // MATERIAL
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
@@ -39,7 +41,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FormsModule,
     //cosas nuevas
     MatDividerModule
-  ,
+  
   ],
   exports: [
     MatIconModule,
