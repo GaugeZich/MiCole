@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//declaraciones
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RecorridosComponent } from '../recorridos/pages/recorridos/recorridos.component';
 
 // MATERIAL
 import { MatIconModule } from '@angular/material/icon';
@@ -22,7 +24,8 @@ import {FirestoreService} from 'src/app/shared/services/firestore.service';
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    RecorridosComponent
   ],
   imports: [
     CommonModule,
