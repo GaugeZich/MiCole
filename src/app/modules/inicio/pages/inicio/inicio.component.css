@@ -1,0 +1,37 @@
+#boton_r{
+border: none;
+border-radius: 10px;
+width: 200px;
+height: 75px;
+margin: auto;
+background-color: #1382ed;
+margin-top: 50px;
+color: black;
+font-size: x-large;
+font-weight: 400;
+}
+
+#boton_s{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    margin-top: 50px;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+}
+#boton_i{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    margin-top: 50px;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+}
