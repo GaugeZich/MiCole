@@ -1,4 +1,4 @@
-#boton_r{
+#boton{
 border: none;
 border-radius: 10px;
 width: 200px;
@@ -9,29 +9,12 @@ margin-top: 50px;
 color: black;
 font-size: x-large;
 font-weight: 400;
+margin-top: 30%;
 }
 
-#boton_s{
-    border: none;
-    border-radius: 10px;
-    width: 200px;
-    height: 75px;
+.botones{
     margin: auto;
-    background-color: #1382ed;
-    margin-top: 50px;
-    color: black;
-    font-size: x-large;
-    font-weight: 400;
-}
-#boton_i{
-    border: none;
-    border-radius: 10px;
-    width: 200px;
-    height: 75px;
-    margin: auto;
-    background-color: #1382ed;
-    margin-top: 50px;
-    color: black;
-    font-size: x-large;
-    font-weight: 400;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
