@@ -53,7 +53,7 @@ section {
   border: none;
   border-radius: 15px;
   justify-content: center;
-
+  margin-top: 50%;
 }
 
 .boton1{
@@ -71,6 +71,7 @@ input{
 }
 h1{
   color: aliceblue;
+  padding-top: 15px;
 }
 .iniciar{
   background-color: #9cc4e4;
