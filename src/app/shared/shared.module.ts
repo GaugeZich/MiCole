@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
+
 import { CommonModule, formatCurrency } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -21,6 +23,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   ],
   imports: [
     CommonModule,
+
+    AppRoutingModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
