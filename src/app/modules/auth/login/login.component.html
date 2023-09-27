@@ -1,0 +1,55 @@
+<div class="div">
+    <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
+        <div div class="g-start-2 padding-top" style="grid-row: 2;">
+
+
+            <!--pruebaaaaaaaaaaaa-->
+            <div class="container" align="center">
+                <h1>BIENVENIDO</h1>
+                <!--formularios-->
+                <!-- email -->
+
+                <form class="example-form  " style="width: 50" >
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Email">
+                    </mat-form-field>
+
+                    <!-- contraseña -->
+                    <mat-form-field class="example-full-width">
+                        
+
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                   
+                </form>
+                <!--boton-->
+                <section>
+                    <div>
+                        <button mat-button class="iniciar">INICIAR SESIÓN</button>
+                    </div>
+                </section>
+                <br>
+
+                <!--links-->
+                <div>
+                    <button mat-button class="boton1" style="  color: white;">¿Olvidaste tu contraseña?</button>
+
+                    <button mat-button class="boton2" style="  color: white;">Crear cuenta</button>
+                </div>
+                <!--boton de volver-->
+                <br>
+
+                <div>
+                    <button mat-button class="boton" style="  color: white;">Volver</button>
+                </div>
+            </div>
+
+
+
+            <!--pruebaaaaaaaaaaaa-->
+        </div>
+    </div>
+</div>
