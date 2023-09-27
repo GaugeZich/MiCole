@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -27,10 +28,12 @@ import{AngularFireStorageModule} from '@angular/fire/compat/storage'
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AuthModule
+    AuthModule,
+    SharedModule
     
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
