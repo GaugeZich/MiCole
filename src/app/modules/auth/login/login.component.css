@@ -1,0 +1,92 @@
+/* formularios*/
+.example-form {
+
+  min-width: 200px;
+  max-width: 250px;
+  width: 100%;
+  
+  
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+/* button*/
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+  
+.container{
+  align-content: center;
+  background-color:#1382ED;
+  height: 400px;
+  width: 300px;
+  border: none;
+  border-radius: 15px;
+  justify-content: center;
+  margin-top: 50%;
+}
+
+.boton1{
+  width: 50%;
+  
+}
+
+input{
+  width: 80%;
+  border: none;
+  padding: 10px px; 
+  cursor: pointer; 
+  border-radius: 6px;
+  
+}
+h1{
+  color: aliceblue;
+  padding-top: 15px;
+}
+.iniciar{
+  background-color: #9cc4e4;
+  border: none;
+  padding: 14px 14px; 
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.boton{
+  margin-top: 70px;
+  background-color:#1382ED ;
+  border: none;
+  padding: 14px 14px; 
+  border-radius: 14px;
+  width: 130px;
+}
+

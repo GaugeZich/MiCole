@@ -3,7 +3,28 @@ import { CommonModule } from '@angular/common';
 
 //declaraciones
 import { AuthRoutingModule } from './auth-routing.module';
+
 import { LoginComponent } from './login/login.component';
+
+
+
+
+// MATERIAL
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule, MatIconButton } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+// FORMULARIO
+import { FormsModule } from '@angular/forms';
+
+// SERVICIOS
+import { AuthService } from './services/auth.service';
+//cosas nuevas 
+
+import {MatDividerModule} from '@angular/material/divider';
+
 import { RegisterComponent } from './register/register.component';
 import { RecorridosComponent } from '../recorridos/pages/recorridos/recorridos.component';
 
@@ -21,6 +42,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import {FirestoreService} from 'src/app/shared/services/firestore.service';
 
+
 @NgModule({
   declarations: [
     RegisterComponent,
@@ -34,7 +56,7 @@ import {FirestoreService} from 'src/app/shared/services/firestore.service';
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-  
+    
     // MATERIAL
     MatIconModule,
     MatInputModule,
@@ -42,7 +64,11 @@ import {FirestoreService} from 'src/app/shared/services/firestore.service';
     MatFormFieldModule,
     MatSelectModule,
     // ANGULAR
-    FormsModule
+
+    FormsModule,
+    //cosas nuevas
+    MatDividerModule
+
   ],
   exports: [
     MatIconModule,
@@ -50,9 +76,11 @@ import {FirestoreService} from 'src/app/shared/services/firestore.service';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    LoginComponent,
+    //cosas nuevas
+    MatDividerModule
   ],
   providers: [ AuthService, FirestoreService ] // proveedor -> servicio
-  
 })
 export class AuthModule { }

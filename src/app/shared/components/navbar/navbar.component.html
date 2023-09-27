@@ -1,7 +1,8 @@
 <!-- Navbar importado de angular material -->
 <mat-toolbar style="background-color: #1382ED;">
     <!-- Boton para sidebar -->
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+ 
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
       <mat-icon>menu</mat-icon>
     </button>
 
@@ -10,3 +11,30 @@
     <span class="example-spacer"></span> <!-- Espaciador -->
     <input type="text" class="buscador" placeholder="¿A donde quieres ir?">
 </mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+      <div class="btn-group">
+          <button class="button">Cuenta</button>
+          <button class="button">Configuración</button>
+          <button class="button">Favorito</button>
+          <button class="button">Ayuda</button>
+      </div>
+      
+      <!-- Espaciador -->
+      <div class="spacer-top">
+          <hr>
+          <div class="center">
+              <span class="texto_contacto">Contacto:</span>
+              <span>
+                  micoleappcipo@gmail.com
+                  <br>
+                  +54 299 XXX XXXX
+                  <br>
+                  XXXXXXXXXXXXXXXX
+              </span>
+          </div>
+      </div>
+  </mat-sidenav>
+</mat-sidenav-container>
