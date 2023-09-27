@@ -4,9 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  
-
 })
 export class LoginComponent {
   hide=true;
+
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//declaraciones
 import { AuthRoutingModule } from './auth-routing.module';
 
 import { LoginComponent } from './login/login.component';
@@ -25,20 +26,37 @@ import { AuthService } from './services/auth.service';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { RegisterComponent } from './register/register.component';
+import { RecorridosComponent } from '../recorridos/pages/recorridos/recorridos.component';
 
+// MATERIAL
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+// FORMULARIO
+import { FormsModule } from '@angular/forms';
+
+// SERVICIOS
+import { AuthService } from './services/auth.service';
+import {FirestoreService} from 'src/app/shared/services/firestore.service';
 
 
 @NgModule({
   declarations: [
-
+    RegisterComponent,
     LoginComponent,
-
-    RegisterComponent
-
+    RecorridosComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
+
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    
     // MATERIAL
     MatIconModule,
     MatInputModule,
@@ -46,10 +64,11 @@ import { RegisterComponent } from './register/register.component';
     MatFormFieldModule,
     MatSelectModule,
     // ANGULAR
+
     FormsModule,
     //cosas nuevas
     MatDividerModule
-  
+
   ],
   exports: [
     MatIconModule,
@@ -62,6 +81,6 @@ import { RegisterComponent } from './register/register.component';
     //cosas nuevas
     MatDividerModule
   ],
-  providers: [ AuthService ] // proveedor -> servicio
+  providers: [ AuthService, FirestoreService ] // proveedor -> servicio
 })
 export class AuthModule { }

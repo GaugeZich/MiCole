@@ -13,6 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { AppRoutingModule } from '../app-routing.module';
 
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
