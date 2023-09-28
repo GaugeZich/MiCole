@@ -65,14 +65,15 @@ hr{
 .texto_contacto{
     font-size: 25px;
 }
-.button{
+.button_sidenav{
     width: 100%;
     text-align: left;
     font-size: 46px;
     border-color: black;    
     margin: 0px;
     cursor: none;
+    height: 50px;
 }
-.btn-group .button:not(:last-child) {
+.btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }

@@ -7,8 +7,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 
 
-
-
 // MATERIAL
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -26,28 +24,12 @@ import { AuthService } from './services/auth.service';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { RegisterComponent } from './register/register.component';
-import { RecorridosComponent } from '../recorridos/pages/recorridos/recorridos.component';
-
-// MATERIAL
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-
-// FORMULARIO
-import { FormsModule } from '@angular/forms';
-
-// SERVICIOS
-import { AuthService } from './services/auth.service';
-import {FirestoreService} from 'src/app/shared/services/firestore.service';
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
     LoginComponent,
-    RecorridosComponent
   ],
   imports: [
     CommonModule,
@@ -81,6 +63,6 @@ import {FirestoreService} from 'src/app/shared/services/firestore.service';
     //cosas nuevas
     MatDividerModule
   ],
-  providers: [ AuthService, FirestoreService ] // proveedor -> servicio
+  providers: [ AuthService] // proveedor -> servicio
 })
 export class AuthModule { }

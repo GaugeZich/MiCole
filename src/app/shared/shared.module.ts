@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { CommonModule, formatCurrency } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AppRoutingModule } from '../app-routing.module';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -13,7 +12,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import { AppRoutingModule } from '../app-routing.module';
 
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -24,8 +22,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   ],
   imports: [
     CommonModule,
-
-    AppRoutingModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
@@ -36,6 +32,13 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   ],
   exports: [
     NavbarComponent,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatSidenavModule
   ]
 })
 export class SharedModule { }
