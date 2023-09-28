@@ -4,9 +4,6 @@ import { SubeComponent } from './pages/sube/sube.component';
 
 const routes: Routes = [
   {
-    path:"",component:SubeComponent
-  },
-  {
     path:"sube",component:SubeComponent
   }
 ];

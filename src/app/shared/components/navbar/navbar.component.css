@@ -71,7 +71,6 @@ hr{
     font-size: 46px;
     border-color: black;    
     margin: 0px;
-    cursor: none;
     height: 50px;
 }
 .btn-group-sidenav .button:not(:last-child) {

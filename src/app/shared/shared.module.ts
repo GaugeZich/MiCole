@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent,
