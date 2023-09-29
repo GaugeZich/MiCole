@@ -1,28 +1,82 @@
-<div class="container">
-    <div class="center">
-        <h1>Tarifa actual</h1>
-        <div >
-            <p class="cuadro1">*Tarifa*$</p>
+<!-- Navbar importado de angular material -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para sidebar -->
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <a routerLink="/inicio">
+      <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    
+        <!-- Buscador de: ¿A donde quieres ir? -->
+    <input type="text" class="buscador" placeholder="¿A donde quieres ir?">
+  </mat-toolbar>
+  
+  
+  <mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+      <div class="btn-group-sidenav">
+          <button class="button_sidenav" routerLink="/login">Cuenta</button>
+          <button class="button_sidenav">Configuración</button>
+          <button class="button_sidenav">Favorito</button>
+          <button class="button_sidenav">Ayuda</button>
+      </div>
+      
+       <!-- Espaciador -->
+      <div class="spacer-top">
+          <hr>
+          <div class="center_navbar">
+              <span class="texto_contacto">Contacto:</span>
+              <br>
+              <span>
+                  micoleappcipo@gmail.com
+                  <br>
+                  +54 299 XXX XXXX
+                  <br>
+                  XXXXXXXXXXXXXXXX
+              </span>
+          </div>
+      </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  
+    
+    <!-- Informacion-->
+    <div class="container">
+        <div class="center">
+            <h1 style="margin-top: 130px;">Tarifa actual</h1>
+            <div >
+                <p class="cuadro1">*Tarifa*$</p>
+            </div>
+        </div>
+        <hr>
+        <div class="center">
+            <h1>Destacado:</h1>
+            <div class="cuadro2">
+                <h1>Ramal *ramal*</h1>
+                <p>Demora de X minutos por *Razon*</p>
+            </div>
+            <div class="cuadro2">
+                <h1>Ramal *ramal*</h1>
+                <p>Hoy no trabaja por paro de colectivos</p>
+            </div>
+            <div class="cuadro2">
+                <h1>Sube de tarifa</h1>
+                <p></p>
+            </div>
+            <div class="cuadro2">
+                <h1>Ramal *ramal*</h1>
+                <p></p>
+            </div>
         </div>
     </div>
-    <hr>
-    <div class="center">
-        <h1>Destacado:</h1>
-        <div class="cuadro2">
-            <h1>Ramal *ramal*</h1>
-            <p>Demora de X minutos por *Razon*</p>
-        </div>
-        <div class="cuadro2">
-            <h1>Ramal *ramal*</h1>
-            <p>Hoy no trabaja por paro de colectivos</p>
-        </div>
-        <div class="cuadro2">
-            <h1>Sube de tarifa</h1>
-            <p></p>
-        </div>
-        <div class="cuadro2">
-            <h1>Ramal *ramal*</h1>
-            <p></p>
-        </div>
-    </div>
-</div>
+    
+  
+  
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  

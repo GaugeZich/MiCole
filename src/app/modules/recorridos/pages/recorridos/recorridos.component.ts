@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./recorridos.component.css']
 })
 export class RecorridosComponent {
-
+  opened = false;
 }
