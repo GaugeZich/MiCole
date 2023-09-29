@@ -1,0 +1,43 @@
+.cuadro1{
+    text-align: center;
+    font-size: 40px;
+    text-size-adjust: 50px;
+    border: 3px solid #1382ED;
+    background-color: #1382ED;
+    border-radius: 12px;
+    width: 250px;
+    height: 100px;
+    padding: 32px;
+}
+
+.cuadro2{
+    text-align: left;
+    border: 3px solid;
+    border-radius: 12px;
+    border-spacing: 150px;
+    width: 98%;
+    height: 100px;
+    padding: 4px;
+}
+
+.hr{
+    height: 150px;
+    color: black;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 7px;
+}
+
+p{
+    font-size: 25px;
+    text-align: start;
+}
