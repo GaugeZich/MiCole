@@ -31,4 +31,36 @@ export class RegisterComponent {
     contrasena1:'' //confirmar la ontrsena del usuario
   }
 
+  //es el uid para conectar con la base de datos 
+  uid= '';
+
+  //creamos la funcion para registrase 
+  async Registrarse(){
+    const credenciales ={
+      email: this.usuarios.email,
+      contrasena: this.usuarios.contrasena
+    }
+
+    const res= await this.servicioAuth.registrar(credenciales.email, credenciales.contrasena)
+    .then(res=>{
+      //alerta de que un asuario se pudo registar 
+      alert("Usted se ha registrado con éxito :)");
+      //llamamos uan nueva ruta para redirigirnos 
+      this.router.navigate(["/principal"]);
+    })
+    .catch(error=>
+      alert("Hubo un problema al ingresar el nuevo usuario:( \n"+error)
+    );
+
+    //se crea una constante del UID para el UID que obtengamos 
+    const uid = await this.servicioAuth.getUid();   
+
+    //hacemos referencia del uid con el usuario 
+    this.usuarios.uid=uid; 
+
+    //llamamos a la funcion
+    this.guardarUser();
+  }
+
+  async guardarUser(){}
 }
