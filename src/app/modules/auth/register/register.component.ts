@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/usuario';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent {
   hide = true; // input de contraseña
   
@@ -62,5 +63,18 @@ export class RegisterComponent {
     this.guardarUser();
   }
 
-  async guardarUser(){}
+  //creamos la funcion asincrona para guardar los usuarios
+  async guardarUser(){
+    this.servicioFirestore.agregarUsuario(this.usuarios,this.usuarios.uid)
+    .then(res =>{
+      console.log(this.usuarios)
+    })
+    .catch(error =>{
+      console.log('Error =>', error);
+    })
+  }
+  async ngOnInit(){
+    const uid = await this.servicioAuth.getUid();
+    console.log(uid);
+  }
 }
