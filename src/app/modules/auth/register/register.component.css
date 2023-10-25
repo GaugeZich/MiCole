@@ -14,7 +14,7 @@
 
 .container{
   width: 275px;           /* Ancho de píxeles */
-  height: 370px;          /* Alto de píxeles */
+  height: 400px;          /* Alto de píxeles */
   background: #1382ED;        /* Fondo de color  */
   border-radius: 15px;
 }
@@ -39,19 +39,22 @@
   height: 32px;
   font-size: large;
   border-radius: 5px;
+  
 }
 
-.boton_guardar{
+.boton{
   border: none;
   border-radius: 15px;
   width: 130px;
   margin: auto;
   background-color: #1382ED;
-  margin-top: 80px;
   color: white;
+  margin-top: 50px;
 }
 
 h1{
  font-weight: 100;
  color: white;
 }
+
+
