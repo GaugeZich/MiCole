@@ -47,7 +47,7 @@ export class RegisterComponent {
       //alerta de que un asuario se pudo registar 
       alert("Usted se ha registrado con éxito :)");
       //llamamos uan nueva ruta para redirigirnos 
-      this.router.navigate(["/principal"]);
+      this.router.navigate(["/login"]);
     })
     .catch(error=>
       alert("Hubo un problema al ingresar el nuevo usuario:( \n"+error)
@@ -61,6 +61,8 @@ export class RegisterComponent {
 
     //llamamos a la funcion
     this.guardarUser();
+
+    
   }
 
   //creamos la funcion asincrona para guardar los usuarios
