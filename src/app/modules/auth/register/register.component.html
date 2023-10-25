@@ -9,8 +9,8 @@
 
                             <!--Nº de sube-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input placeholder="Nº de sube" class="input" [(ngModel)]="usuarios.sube" matInput required></div>
-                                
+                                <div class="col"><input placeholder="Nº de sube" class="input" [(ngModel)]="usuarios.sube" #input2 minlength="6" matInput required></div>
+                                <mat-hint align="start">16/{{input2.value.length}}</mat-hint>
                             </div>
 
                             <!--Nombre-->
@@ -36,14 +36,13 @@
 
                             <!--contrasena-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input placeholder="Ingrese su contraseña" class="input" [(ngModel)]="usuarios.contrasena" [type]="hide ? 'password' : 'text'" #input minlength="6"  matInput required> </div>
-                                <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
+                                <div class="col"><input placeholder="Ingrese su contraseña" class="input" [(ngModel)]="usuarios.contrasena" [type]="hide ? 'password' : 'text'" #input1 minlength="6"  matInput required> </div>
+                                <mat-hint align="start">Mínimo:6/{{input1.value.length}}</mat-hint>
                             </div>
 
                             <!--contrasena1-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input placeholder="Confirme su contraseña" class="input" [(ngModel)]="usuarios.contrasena1" [type]="hide ? 'password' : 'text'" #input minlength="6"  matInput required></div>
-                                <mat-hint  align="start">Mínimo:6/{{input.value.length}}</mat-hint>
+                                <div class="col"><input placeholder="Confirme su contraseña" class="input" [(ngModel)]="usuarios.contrasena1" [type]="hide ? 'password' : 'text'"   matInput required></div>
                             </div>
 
                         </div>
@@ -54,17 +53,18 @@
         </div>
         
     </div>
+    
 </div>
 <div class="div">
     <div class="grid text-center " style="--bs-rows: 3; --bs-columns: 3;">
         <div class="g-start-2 padding-top" style="grid-row: 2">
             <div >
                 <div>
-                    <button class="boton"  color="primary" (click)="Registrarse()">Registrar</button>
+                    <button class="boton"  color="primary" (click)="Registrarse()" >Registrar</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
 
 
