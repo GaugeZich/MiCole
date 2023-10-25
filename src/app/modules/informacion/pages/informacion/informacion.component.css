@@ -41,3 +41,85 @@ p{
     font-size: 25px;
     text-align: start;
 }
+
+
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    padding: 20px;
+}
+
+.logo{
+    margin-left: 2px;
+    width: 50px;
+    height: 50px;
+}
+
+::placeholder{
+    color: black;
+}
+
+.buscador{
+    background: url("../../../../../assets/search-icon.png") no-repeat right;
+    background-size: 20px;
+    background-color:  #3C96EE;
+    border-radius: 7px;
+    height: 40%;
+    width: 53%;
+    font-size: large;
+}
+
+
+mat-sidenav-container{
+    height: calc(205vh - 115vh);
+}
+mat-sidenav{
+    width: 300px;
+    background-color: #eee;
+}
+a{
+    font-size: 46px;
+}
+hr{
+    height: 1px;
+    color: black;
+}
+.spacer-top{
+    margin-top: 100%;
+    margin-bottom: 0%;
+}
+.center_navbar{
+    text-align: center;
+    color: #919497;
+}
+.texto_contacto{
+    font-size: 25px;
+}
+.button_sidenav{
+    width: 100%;
+    text-align: left;
+    font-size: 46px;
+    border-color: black;    
+    margin: 0px;
+    height: 50px;
+}
+.btn-group-sidenav .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}

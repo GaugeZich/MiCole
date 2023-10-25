@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./sube.component.css']
 })
 export class SubeComponent {
-
+  opened = false;
 }
