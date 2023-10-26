@@ -30,17 +30,6 @@
     color: black;
 }
 
-.buscador{
-    background: url("../../../../../assets/search-icon.png") no-repeat right;
-    background-size: 20px;
-    background-color:  #3C96EE;
-    border-radius: 7px;
-    height: 40%;
-    width: 53%;
-    font-size: large;
-}
-
-
 mat-sidenav-container{
     height: calc(205vh - 115vh);
 }
