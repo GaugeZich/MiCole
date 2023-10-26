@@ -15,7 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 
 // FORMULARIO
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // SERVICIOS
 import { AuthService } from './services/auth.service';
@@ -48,6 +48,7 @@ import { RegisterComponent } from './register/register.component';
     // ANGULAR
 
     FormsModule,
+    ReactiveFormsModule,
     //cosas nuevas
     MatDividerModule
 
@@ -59,6 +60,7 @@ import { RegisterComponent } from './register/register.component';
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
+    ReactiveFormsModule,
     LoginComponent,
     //cosas nuevas
     MatDividerModule

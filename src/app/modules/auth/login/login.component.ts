@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthModule } from '../auth.module';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
