@@ -97,3 +97,15 @@ hr{
 .btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }
+
+.button{
+    border-radius: 10px;
+    border-width: 3px;
+    width: 200px;
+    height: 75px;
+    margin-top: 100px;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+
+}
