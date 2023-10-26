@@ -14,7 +14,7 @@
 
 .container{
   width: 275px;           /* Ancho de píxeles */
-  height: 410px;          /* Alto de píxeles */
+  height: 430px;          /* Alto de píxeles */
   background: #1382ED;        /* Fondo de color  */
   border-radius: 15px;
 }

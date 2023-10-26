@@ -11,14 +11,14 @@
 
                 <form class="example-form  " style="width: 50" >
                     <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Email">
+                        <input matInput placeholder="Email" [(ngModel)]="usuarios.email">
                     </mat-form-field>
 
                     <!-- contraseña -->
                     <mat-form-field class="example-full-width">
                         
 
-                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña">
+                        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" [(ngModel)]="usuarios.contrasena">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>

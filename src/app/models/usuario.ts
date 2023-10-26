@@ -7,4 +7,5 @@ export interface Usuario{
     dni: string;
     contrasena: string;
     contrasena1: string;
+    rol: string;
 }
