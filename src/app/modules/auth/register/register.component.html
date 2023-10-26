@@ -9,46 +9,63 @@
 
                             <!--Nº de sube-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input " placeholder="Nº de sube" appearance="fill"></div>
+                                <div class="col"><input placeholder="Nº de sube" class="input" [(ngModel)]="usuarios.sube" #input2 minlength="6" matInput required></div>
+                                <mat-hint align="start">16/{{input2.value.length}}</mat-hint>
                             </div>
 
                             <!--Nombre-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input" placeholder="Ingrese su nombre"></div>
+                                <div class="col"> <input placeholder="Ingrese su nombre" class="input" [(ngModel)]="usuarios.nombre" matInput required></div>
+                               
                             </div>
-
+                            
                             <!--Apellido-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input" placeholder="Ingrese su apellido"></div>
+                                <div class="col"><input  placeholder="Ingrese su apellido" class="input" [(ngModel)]="usuarios.apellido" matInput required></div>
                             </div>
 
                             <!--Email-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input" placeholder="Ingrese su email"></div>
+                                <div class="col"><input placeholder="Ingrese su email" class="input" [(ngModel)]="usuarios.email" matInput required></div>
                             </div>
 
                             <!--dni-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input" placeholder="Ingrese su DNI"></div>
+                                <div class="col"><input placeholder="Ingrese su DNI" class="input" [(ngModel)]="usuarios.dni" matInput required></div>
                             </div>
 
                             <!--contrasena-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"> <input type="text" class="input" placeholder="Ingrese su contraseña"></div>
+                                <div class="col"><input placeholder="Ingrese su contraseña" class="input" [(ngModel)]="usuarios.contrasena" [type]="hide ? 'password' : 'text'" #input1 minlength="6"  matInput required> </div>
+                                <mat-hint align="start">Mínimo:6/{{input1.value.length}}</mat-hint>
                             </div>
 
                             <!--contrasena1-->
                             <div class="row row-cols-1 padding">
-                                <div class="col"><input type="text" class="input" placeholder="Confirme su contraseña"></div>
+                                <div class="col"><input placeholder="Confirme su contraseña" class="input" [(ngModel)]="usuarios.contrasena1" [type]="hide ? 'password' : 'text'"   matInput required></div>
                             </div>
 
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <button type="button" class="btn btn-primary" class="boton_guardar">Guardar</button>
+        
     </div>
+    
 </div>
+<div class="div">
+    <div class="grid text-center " style="--bs-rows: 3; --bs-columns: 3;">
+        <div class="g-start-2 padding-top" style="grid-row: 2">
+            <div >
+                <div>
+                    <button class="boton"  color="primary" (click)="Registrarse()">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
 
 
