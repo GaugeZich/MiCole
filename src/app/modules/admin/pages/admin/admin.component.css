@@ -77,3 +77,25 @@ hr{
 .btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }
+
+/* Administracion: */
+
+#boton{
+    border-width: 3px;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+    margin-top: 50%;
+}
+    
+.botones{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+    
