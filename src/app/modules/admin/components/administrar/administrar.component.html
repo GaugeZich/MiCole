@@ -13,3 +13,40 @@
     
     <h1>Administración</h1>
 </mat-toolbar>
+
+<!-- Administrar: -->
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Sube</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Contraseña</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>1243-1234-1234-1243</td>
+        <td>Luciana</td>
+        <td>Martinez</td>
+        <td>lucianamartinez898@gmail.com</td>
+        <td>45456745</td>
+        <td>lukitateamo</td>
+        <!-- Acciones -->
+        <td>
+          <!-- Boton de editar -->
+            <button id="btn-acs" type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editarProducto">
+              <mat-icon>edit</mat-icon></button>
+              <!-- Boton de borrar -->
+            <button id="btn-acs" type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProducto">
+              <mat-icon>delete</mat-icon></button>
+        </td>
+      </tr>
+    </tbody>
+</table>
