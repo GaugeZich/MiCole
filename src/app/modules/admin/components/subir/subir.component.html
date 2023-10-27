@@ -13,3 +13,92 @@
     
     <h1>Administración</h1>
 </mat-toolbar>
+
+<!-- Subir -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="center">
+        <!-- Botón para el modal de actualizar la tarifa -->
+        <button class="boton" data-bs-target="#actualizar" data-bs-toggle="modal">Actualizar Tarifa</button>
+        <h1 class="h1_info">Tarifa actual:
+          <br>
+          <!--{{interpolacion}}-->$
+        </h1>
+        <!-- Botón para el modal de subir información -->
+        <button class="boton" data-bs-target="#subir" data-bs-toggle="modal">Subir Información</button>
+        <!-- Botón para el modal de eliminar información -->
+        <button class="boton" data-bs-target="#eliminar" data-bs-toggle="modal">Eliminar Información</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para actualizar la tarifa -->
+<div class="modal fade" id="actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar la tarifa</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Tarifa actual: <!-- {{interpolación}} --></h1>
+        <h1 class="h1_modal">Ingrese la tarifa: </h1>
+        <input type="text" placeholder="Ingrese nueva tarifa" class="input" type="number">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para subir información-->
+<div class="modal fade" id="subir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Subir información</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1 class="h1_modal">Ingrese el titulo de la información: </h1>
+        <input type="text" placeholder="Ingrese titulo" class="input" type="text">
+        <h1 class="h1_modal">Ingrese la razon de la información: </h1>
+        <input type="text" placeholder="Ingrese razon" class="input" type="text">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Subir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para eliminar información -->
+<div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar información</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+    
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="span_modal"><!-- {{interpolacion}} --></span>
+            <button class="boton_eliminar btn btn-outline-danger rounded-pill">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

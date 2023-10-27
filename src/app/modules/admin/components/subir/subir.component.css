@@ -66,3 +66,49 @@ hr{
 .btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }
+
+.center{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.h1_info{
+    font-size: 40px;
+    margin-bottom: 7px;
+    color: black;
+    margin-top: 25px;
+}
+
+.boton{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+    margin-top: 30%;
+}
+
+.modal{
+    margin-top: 50px;
+}
+
+.input{
+    height: 32px;
+    font-size: large;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.h1_modal{
+    margin-bottom: 0px;
+}
+
+.span_modal{
+    font-size: 18px;
+}

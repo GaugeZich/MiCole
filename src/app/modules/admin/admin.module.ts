@@ -12,6 +12,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+// Importaciones de material
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -26,13 +28,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-
+    MatListModule
   ],
   exports: [
     AdminComponent,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatListModule
   ]
 })
 export class AdminModule { }
