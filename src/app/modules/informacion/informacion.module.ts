@@ -17,11 +17,13 @@ import {MatInputModule} from '@angular/material/input';
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { CuadroComponent } from './components/cuadro/cuadro.component';
 
 
 @NgModule({
   declarations: [
-    InformacionComponent
+    InformacionComponent,
+    CuadroComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,8 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatSidenavModule,
     RouterModule,
-    InformacionComponent
+    InformacionComponent,
+    CuadroComponent
   ]
 })
 export class InformacionModule { }

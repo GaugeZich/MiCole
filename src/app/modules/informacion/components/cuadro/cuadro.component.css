@@ -1,0 +1,23 @@
+.container{
+    margin-bottom: 5px;
+}
+.cuadro{
+    text-align: left;
+    border: 3px solid;
+    border-radius: 12px;
+    border-spacing: 150px;
+    width: 375px;
+    height: 100px;
+    padding: 4px;
+}
+
+h1{
+    font-size: 40px;
+    margin-bottom: 7px;
+}
+
+p{
+    font-size: 25px;
+    text-align: start;
+    display: flex;
+}

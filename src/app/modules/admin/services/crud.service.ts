@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Informacion } from 'src/app/models/informacion';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class CrudService {
         rej(error)
       }
     })
+  }
+
+  obtenerInformacion(){
+    return this.informacionCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
   }
 
 }
