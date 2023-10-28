@@ -15,6 +15,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 // Importaciones de material
 import {MatListModule} from '@angular/material/list';
 
+// Importaciones para el formulario
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AdminComponent,

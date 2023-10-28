@@ -63,15 +63,15 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Subir información</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" [formGroup]="informacion">
         <h1 class="h1_modal">Ingrese el titulo de la información: </h1>
-        <input type="text" placeholder="Ingrese titulo" class="input" type="text">
+        <input type="text" placeholder="Ingrese titulo" class="input" type="text" formControlName="titulo">
         <h1 class="h1_modal">Ingrese la razon de la información: </h1>
-        <input type="text" placeholder="Ingrese razon" class="input" type="text">
+        <input type="text" placeholder="Ingrese razon" class="input" type="text" formControlName="razon">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Subir</button>
+        <button type="button" class="btn btn-primary" (click)="agregarInformacion()" data-bs-dismiss="modal">Subir</button>
       </div>
     </div>
   </div>
