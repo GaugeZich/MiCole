@@ -6,6 +6,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdministrarComponent } from './components/administrar/administrar.component';
 import { SubirComponent } from './components/subir/subir.component';
+import { ListComponent } from './components/list/list.component';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AdminComponent,
     AdministrarComponent,
-    SubirComponent
+    SubirComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,
