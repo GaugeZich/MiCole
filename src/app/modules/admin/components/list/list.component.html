@@ -1,7 +1,7 @@
 <div class="div" *ngFor="let col of coleccionInformacion">
     <li class="list-group-item d-flex justify-content-between align-items-center">
         <span class="span_modal">{{col.titulo}}</span>
-        <button class="boton_eliminar btn btn-outline-danger rounded-pill">
+        <button class="boton_eliminar btn btn-outline-danger rounded-pill" (click)="borrarInformacion()">
         <mat-icon>delete</mat-icon>
         </button>
     </li>

@@ -37,4 +37,17 @@ export class CrudService {
     return this.informacionCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
   }
 
+  eliminarInformacion(idInformacion: string){
+    return new Promise((res,rej) =>{
+      try{
+        const resp = this.informacionCollection.doc(idInformacion).delete()
+
+        res(resp)
+      }
+      catch(error){
+        rej(error)
+      }
+    })
+
+  }
 }
