@@ -66,3 +66,24 @@ hr{
 .btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }
+
+.boton{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+    margin-top: 10%;
+    margin-bottom: 15px;
+}
+
+.center{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

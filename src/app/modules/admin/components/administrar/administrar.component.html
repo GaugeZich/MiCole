@@ -15,38 +15,65 @@
 </mat-toolbar>
 
 <!-- Administrar: -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="center">
+        <button class="boton">Agregar manualmente</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Sube</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
-        <th scope="col">Email</th>
-        <th scope="col">DNI</th>
-        <th scope="col">Contraseña</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>1243-1234-1234-1243</td>
-        <td>Luciana</td>
-        <td>Martinez</td>
-        <td>lucianamartinez898@gmail.com</td>
-        <td>45456745</td>
-        <td>lukitateamo</td>
-        <!-- Acciones -->
-        <td>
-          <!-- Boton de editar -->
-            <button id="btn-acs" type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editarProducto">
-              <mat-icon>edit</mat-icon></button>
-              <!-- Boton de borrar -->
-            <button id="btn-acs" type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminarProducto">
-              <mat-icon>delete</mat-icon></button>
-        </td>
-      </tr>
-    </tbody>
-</table>
+<div class="modal-body">
+  <ul class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="span_modal">guiasidauisd</span>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editar">
+      <mat-icon>edit</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">N° de Sube:</label>
+          <input class="form-control" type="number" placeholder="XXXX-XXXX-XXXX-XXXX">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nombre:</label>
+          <input class="form-control" type="text" placeholder="Nombre del usuario">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Apellido:</label>
+          <input class="form-control" type="text" placeholder="Apellido del usuario">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input class="form-control" type="email" placeholder="emaildelusuario@email.com">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">DNI:</label>
+          <input class="form-control" type="number" placeholder="DNI del usuario: XX XXX XXX">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña:</label>
+          <input class="form-control" type="text" placeholder="Contraseña del usuario">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
