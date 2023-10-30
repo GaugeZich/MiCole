@@ -36,6 +36,7 @@
   </ul>
 </div>
 
+<!-- Modal para editar los usuarios -->
 <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -68,6 +69,13 @@
           <label class="form-label">Contraseña:</label>
           <input class="form-control" type="text" placeholder="Contraseña del usuario">
         </div>
+        <div class="mb-3">
+          <label class="form-label">Rol:</label>
+          <select class="form-control" class="form-select">
+            <option value="usuario">Usuario</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -78,7 +86,7 @@
   </div>
 </div>
 
-
+<!-- Modal para agregar usuarios manualmente -->
 <div class="modal fade" id="agregarusuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -110,6 +118,13 @@
         <div class="mb-3">
           <label class="form-label">Contraseña:</label>
           <input class="form-control" type="text" placeholder="Contraseña del usuario">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rol:</label>
+          <select class="form-control" class="form-select">
+            <option value="usuario" selected>Usuario</option>
+            <option value="admin">Admin</option>
+          </select>
         </div>
       </div>
       <div class="modal-footer">
