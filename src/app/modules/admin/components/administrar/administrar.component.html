@@ -27,9 +27,9 @@
 
 <div class="modal-body">
   <ul class="list-group list-group-numbered">
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="span_modal">guiasidauisd</span>
-      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editar">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let col of coleccionUsuarios">
+      <span class="span_modal">{{col.email}}</span>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editar" (click)="mostrarModalEditar(col)">
       <mat-icon>edit</mat-icon>
       </button>
     </li>
@@ -37,41 +37,41 @@
 </div>
 
 <!-- Modal para editar los usuarios -->
-<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor="let col of coleccionUsuarios">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar usuario:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div [formGroup]="usuario" class="modal-body">
         <div class="mb-3">
           <label class="form-label">N° de Sube:</label>
-          <input class="form-control" type="number" placeholder="XXXX-XXXX-XXXX-XXXX">
+          <input class="form-control" type="number" placeholder="{{col.sube}}" formControlName="sube">
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre:</label>
-          <input class="form-control" type="text" placeholder="Nombre del usuario">
+          <input class="form-control" type="text" placeholder="{{col.nombre}}" formControlName="nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Apellido:</label>
-          <input class="form-control" type="text" placeholder="Apellido del usuario">
+          <input class="form-control" type="text" placeholder="{{col.apellido}}" formControlName="apellido">
         </div>
         <div class="mb-3">
           <label class="form-label">Email:</label>
-          <input class="form-control" type="email" placeholder="emaildelusuario@email.com">
+          <input class="form-control" type="email" placeholder="{{col.email}}" formControlName="email">
         </div>
         <div class="mb-3">
           <label class="form-label">DNI:</label>
-          <input class="form-control" type="number" placeholder="DNI del usuario: XX XXX XXX">
+          <input class="form-control" type="number" placeholder="{{col.dni}}" formControlName="dni">
         </div>
         <div class="mb-3">
           <label class="form-label">Contraseña:</label>
-          <input class="form-control" type="text" placeholder="Contraseña del usuario">
+          <input class="form-control" type="text" placeholder="{{col.contrasena}}" formControlName="contraseña">
         </div>
         <div class="mb-3">
           <label class="form-label">Rol:</label>
-          <select class="form-control" class="form-select">
+          <select class="form-control" class="form-select" formControlName="{{col.rol}}">
             <option value="usuario">Usuario</option>
             <option value="admin">Admin</option>
           </select>
@@ -79,7 +79,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-primary" (click)="editarUsuario()">Guardar</button>
         <button type="button" class="btn btn-danger">Eliminar</button>
       </div>
     </div>
@@ -91,7 +91,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuario:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

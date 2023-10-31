@@ -2,16 +2,24 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Informacion } from 'src/app/models/informacion';
 import { map } from 'rxjs/operators'
+import { Usuario } from 'src/app/models/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
+  // Declaración de colección para información:
   private informacionCollection: AngularFirestoreCollection<Informacion>
+
+  // Declaración de colección para usuarios
+  private usuariosCollection: AngularFirestoreCollection<Usuario>
 
   constructor(private database: AngularFirestore) {
     this.informacionCollection = database.collection('informacion')
+    this.usuariosCollection = database.collection('usuarios')
   }
+
+  // CRUD para informacion:
 
   // CRUD -> Funcion para crear una información
   crearInformacion(informacion: Informacion){
@@ -33,6 +41,10 @@ export class CrudService {
     })
   }
 
+    // snapshotChanges -> Toma captura del estado de los datos
+    // pipe -> funciona como tuberia, retorna el nuevo arreglo
+    // map -> "mapea" o recorre esa nueva información
+    // a -> resguarda la nueva información y la envia
   obtenerInformacion(){
     return this.informacionCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
   }
@@ -49,5 +61,44 @@ export class CrudService {
       }
     })
 
+  }
+
+  // CRUD para usuarios:
+
+  crearUsuario(usuario: Usuario){
+    return new Promise(async(res,rej) => {
+      try{
+        const idUsuario = this.database.createId();
+
+        usuario.uid = idUsuario;
+
+        const resultado = await this.usuariosCollection.doc(idUsuario).set(usuario)
+
+        res(resultado)
+      }
+      catch(error){
+        rej(error)
+      }
+    })
+  }
+
+  obtenerUsuario(){
+    return this.usuariosCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
+  }
+
+  editarUsuario(idUsuario: string, nuevaData: Usuario){
+    return this.database.collection('usuario').doc(idUsuario).update(nuevaData);
+  }
+  
+  eliminarUsuario(idUsuario: string){
+    return new Promise((resolve, reject) => {
+      try{
+        const resp = this.usuariosCollection.doc(idUsuario).delete()
+        resolve(resp)
+      }
+      catch(error){
+        reject(error)
+      }
+    })
   }
 }
