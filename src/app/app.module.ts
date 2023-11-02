@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfiguracionRoutingModule } from './modules/configuracion/configuracion-routing.module';
 
 // AuthModule
 import { AuthModule } from './modules/auth/auth.module';
@@ -19,16 +20,13 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { ConfiguracionComponent } from './modules/pages/configuracion/configuracion.component';
 
-//imports para la vista configuracion de angular 
-import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ConfiguracionComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +40,7 @@ import {MatListModule} from '@angular/material/list';
     RecorridosModule,
     SubeModule,
     InformacionModule,
-    MatDividerModule,
-    MatListModule
+    ConfiguracionRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

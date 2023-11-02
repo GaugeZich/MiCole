@@ -22,7 +22,7 @@ const routes: Routes = [
     path:"",loadChildren:()=>import('./modules/informacion/informacion.module').then(m=>m.InformacionModule)
   },
   {
-    path:"",loadChildren:()=>import('./modules/pages/configuracion/configuracion.component').then(m=>m.ConfiguracionComponent)
+    path:"",loadChildren:()=>import('./modules/configuracion/configuracion.module').then(m=>m.ConfiguracionModule)
   }
   
 ];
