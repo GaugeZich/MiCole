@@ -19,11 +19,13 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ConfiguracionComponent } from './modules/pages/configuracion/configuracion.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConfiguracionComponent,
   ],
   imports: [
     BrowserModule,
