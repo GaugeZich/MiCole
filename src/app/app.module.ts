@@ -21,6 +21,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ConfiguracionComponent } from './modules/pages/configuracion/configuracion.component';
 
+//imports para la vista configuracion de angular 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,12 @@ import { ConfiguracionComponent } from './modules/pages/configuracion/configurac
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
- 
     SharedModule,
     RecorridosModule,
     SubeModule,
-    InformacionModule
+    InformacionModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
