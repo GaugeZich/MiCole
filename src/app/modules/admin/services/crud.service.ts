@@ -86,14 +86,14 @@ export class CrudService {
     return this.usuariosCollection.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
   }
 
-  editarUsuario(idUsuario: string, nuevaData: Usuario){
-    return this.database.collection('usuario').doc(idUsuario).update(nuevaData);
+  editarUsuario(uid: string, nuevaData: Usuario){
+    return this.database.collection('usuarios').doc(uid).update(nuevaData);
   }
   
-  eliminarUsuario(idUsuario: string){
+  eliminarUsuario(uid: string){
     return new Promise((resolve, reject) => {
       try{
-        const resp = this.usuariosCollection.doc(idUsuario).delete()
+        const resp = this.usuariosCollection.doc(uid).delete()
         resolve(resp)
       }
       catch(error){

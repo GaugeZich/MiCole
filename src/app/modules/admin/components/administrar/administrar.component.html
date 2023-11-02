@@ -47,7 +47,7 @@
       <div [formGroup]="usuario" class="modal-body">
         <div class="mb-3">
           <label class="form-label">N° de Sube:</label>
-          <input class="form-control" type="number" placeholder="{{col.sube}}" formControlName="sube">
+          <input class="form-control" type="number" placeholder="{{col.sube}}" formControlName="sube" maxlength="16" minlength="16">
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre:</label>
@@ -63,15 +63,19 @@
         </div>
         <div class="mb-3">
           <label class="form-label">DNI:</label>
-          <input class="form-control" type="number" placeholder="{{col.dni}}" formControlName="dni">
+          <input class="form-control" type="number" placeholder="{{col.dni}}" formControlName="dni" maxlength="8" minlength="8">
         </div>
         <div class="mb-3">
           <label class="form-label">Contraseña:</label>
-          <input class="form-control" type="text" placeholder="{{col.contrasena}}" formControlName="contraseña">
+          <input class="form-control" type="text" placeholder="{{col.contrasena}}" formControlName="contrasena" minlength="6">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña1:</label>
+          <input class="form-control" type="text" placeholder="{{col.contrasena1}}" formControlName="contrasena1" minlength="6">
         </div>
         <div class="mb-3">
           <label class="form-label">Rol:</label>
-          <select class="form-control" class="form-select" formControlName="{{col.rol}}">
+          <select class="form-control" class="form-select" formControlName="rol">
             <option value="usuario">Usuario</option>
             <option value="admin">Admin</option>
           </select>
@@ -79,8 +83,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" (click)="editarUsuario()">Guardar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarUsuario()">Guardar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="borrarUsuario()">Eliminar</button>
       </div>
     </div>
   </div>
@@ -94,34 +98,38 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuario:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" [formGroup]="usuario">
         <div class="mb-3">
           <label class="form-label">N° de Sube:</label>
-          <input class="form-control" type="number" placeholder="XXXX-XXXX-XXXX-XXXX">
+          <input class="form-control" type="number" formControlName="sube" placeholder="XXXX-XXXX-XXXX-XXXX" minlength="16" maxlength="16">
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre:</label>
-          <input class="form-control" type="text" placeholder="Nombre del usuario">
+          <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre del usuario">
         </div>
         <div class="mb-3">
           <label class="form-label">Apellido:</label>
-          <input class="form-control" type="text" placeholder="Apellido del usuario">
+          <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido del usuario">
         </div>
         <div class="mb-3">
           <label class="form-label">Email:</label>
-          <input class="form-control" type="email" placeholder="emaildelusuario@email.com">
+          <input class="form-control" type="email" formControlName="email" placeholder="emaildelusuario@email.com">
         </div>
         <div class="mb-3">
           <label class="form-label">DNI:</label>
-          <input class="form-control" type="number" placeholder="DNI del usuario: XX XXX XXX">
+          <input class="form-control" type="number" formControlName="dni" placeholder="DNI del usuario: XX XXX XXX" maxlength="8">
         </div>
         <div class="mb-3">
           <label class="form-label">Contraseña:</label>
-          <input class="form-control" type="text" placeholder="Contraseña del usuario">
+          <input class="form-control" type="text" formControlName="contrasena" placeholder="Contraseña del usuario" minlength="6">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña1:</label>
+          <input class="form-control" type="text" formControlName="contrasena1" placeholder="Contraseña del usuario">
         </div>
         <div class="mb-3">
           <label class="form-label">Rol:</label>
-          <select class="form-control" class="form-select">
+          <select class="form-control" class="form-select" formControlName="rol">
             <option value="usuario" selected>Usuario</option>
             <option value="admin">Admin</option>
           </select>
@@ -129,7 +137,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Agregar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarUsuario()">Agregar</button>
       </div>
     </div>
   </div>
