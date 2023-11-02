@@ -18,6 +18,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 
+
+
+
 @NgModule({
   declarations: [
     ConfiguracionComponent

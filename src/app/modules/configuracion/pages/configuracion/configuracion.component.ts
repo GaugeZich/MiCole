@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./configuracion.component.css']
 })
 export class ConfiguracionComponent {
-
+  opened = false;
 }
