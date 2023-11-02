@@ -18,8 +18,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 
+//importo el slider toggle 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
-
+//importo la linea que divide los botones 
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     MatInputModule,
     MatSidenavModule,
-    RouterModule
+    MatSlideToggleModule,
+    RouterModule,
+    MatDividerModule
   ],
   exports:[
     MatIconModule, 
