@@ -22,6 +22,21 @@ export class ListComponent {
     })
   }
 
+  // Confirm -> Pop-up para pregunta si esta seguro
+  // Guarda la informacion seleccionada para borrar la información
+  confirm(informacionSeleccionada: Informacion){
+    this.informacionSeleccionada = informacionSeleccionada
+
+    if(confirm ("¿Está seguro?") === true){
+      this.borrarInformacion()
+    }
+
+    // let respuesta = confirm("¿Está seguro?")
+    // if(respuesta){
+    //   this.borrarInformacion()
+    // }
+  }
+
   borrarInformacion(){
     this.servicioCrud.eliminarInformacion(this.informacionSeleccionada.idInformacion)
     .then(res => {
@@ -31,4 +46,5 @@ export class ListComponent {
       alert("Hubo un error al eliminar la información: \n"+error)
     })
   }
+
 }
