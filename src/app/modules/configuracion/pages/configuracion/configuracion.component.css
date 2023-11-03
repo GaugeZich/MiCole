@@ -116,10 +116,12 @@ hr{
     font-size: larger;
 }
 
-.mdc-switch_track{
-    background: #1382ED;
-}   
-
+.col{
+    width: 130px;
+    height: 110px;
+    padding: 15px;
+    padding-left: 50px;
+}
 .container{
     padding-top: 40px;
 }
