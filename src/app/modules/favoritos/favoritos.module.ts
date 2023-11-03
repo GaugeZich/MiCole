@@ -18,6 +18,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router'; 
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 
+
+
 @NgModule({
   declarations: [
     FavoritosComponent
