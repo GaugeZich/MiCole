@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { RecorridosModule } from './modules/recorridos/recorridos.module';
 import { SubeModule } from './modules/sube/sube.module';
 import { InformacionModule } from './modules/informacion/informacion.module';
+import { FavoritosComponent } from './modules/favoritos/pages/favoritos/favoritos.component';
 
 // Firebase
 import { environment } from 'src/environments/environment';
@@ -21,9 +22,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
