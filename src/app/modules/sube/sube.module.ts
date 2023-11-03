@@ -20,10 +20,12 @@ import {MatInputModule} from '@angular/material/input';
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { CargarComponent } from './component/cargar/cargar.component';
 
 @NgModule({
   declarations: [
-    SubeComponent
+    SubeComponent,
+    CargarComponent
   ],
   imports: [
     CommonModule,
