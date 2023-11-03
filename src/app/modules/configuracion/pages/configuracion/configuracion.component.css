@@ -113,9 +113,11 @@ hr{
 }
 
 .h1{
+    font-size: 1000px;
+}
+.h2{
     font-size: larger;
 }
-
 .col{
     width: 130px;
     height: 110px;
