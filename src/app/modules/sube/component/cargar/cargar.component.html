@@ -1,1 +1,42 @@
-<p>cargar works!</p>
+
+
+    <div class="container" style="margin-top: 100px;">
+    <div class="center">
+    <mat-stepper orientation="vertical">
+        <mat-step>
+          <ng-template matStepLabel>1 N° SUBE</ng-template>
+          <ng-template matStepContent>
+        <div class="cuadro1">
+         <p class="p_cuadro1">XXXX-XXXX</p>
+        </div>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>2 ¿cuanto recargara?</ng-template>
+          <ng-template matStepContent>
+        <div class="cuadro2">
+           
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$100</button></mat-grid-tile>
+                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$200</button> </mat-grid-tile>
+                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$500</button> </mat-grid-tile>
+                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$1000</button> </mat-grid-tile>
+                <mat-grid-tile><button mat-button class="boton1" style="  color: white;" >Otro importe</button></mat-grid-tile>
+                git add .
+            </mat-grid-list>
+              
+              
+        </div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>3 Metodos de pago</ng-template>
+          <p>This content was rendered eagerly</p>
+          <button mat-button matStepperPrevious>Back</button>
+        </mat-step>
+      </mat-stepper>
+       </div>
+    </div>

@@ -1,0 +1,42 @@
+.container{
+    display: grid;
+}
+.center{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.cuadro1{
+    text-size-adjust: 50px;
+    border: 3px solid #1382ED;
+    background-color: #1382ED;
+    border-radius: 12px;
+    width: 250px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+.p_cuadro1{
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.boton{
+    margin-top: 5px;
+    background-color:#1382ED ;
+    border: none;
+    padding: 14px 14px; 
+    border-radius: 15px;
+    width: 30px;
+  }
+
+  .boton1{
+    margin-top: 5px;
+    background-color:#1382ED ;
+    border: none;
+    padding: 14px 14px; 
+    border-radius: 15px;
+    width: 60%;
+  }
+  

@@ -6,6 +6,7 @@ import { SubeRoutingModule } from './sube-routing.module';
 
 // Importaciones de angular material
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatStepperModule} from '@angular/material/stepper';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -38,7 +39,8 @@ import { CargarComponent } from './component/cargar/cargar.component';
     FormsModule,
     MatInputModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
+    MatStepperModule
   ],
   exports: [
     SubeComponent,
@@ -49,7 +51,8 @@ import { CargarComponent } from './component/cargar/cargar.component';
     FormsModule,
     MatInputModule,
     RouterModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatStepperModule
   ]
 })
 export class SubeModule { }
