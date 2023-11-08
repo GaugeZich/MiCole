@@ -9,7 +9,7 @@
         <div class="cuadro1">
          <p class="p_cuadro1">XXXX-XXXX</p>
         </div>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperNext>Siguiente</button>
           </ng-template>
         </mat-step>
         <mat-step>
@@ -17,25 +17,37 @@
           <ng-template matStepContent>
         <div class="cuadro2">
            
-            <mat-grid-list cols="2" rowHeight="2:1">
-                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$100</button></mat-grid-tile>
-                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$200</button> </mat-grid-tile>
-                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$500</button> </mat-grid-tile>
-                <mat-grid-tile> <button mat-button class="boton" style="  color: white;" >$1000</button> </mat-grid-tile>
-                <mat-grid-tile><button mat-button class="boton1" style="  color: white;" >Otro importe</button></mat-grid-tile>
-                git add .
+            <mat-grid-list cols="2" rowHeight="2:2">
+                <mat-grid-tile> <button class="boton">$100</button></mat-grid-tile>
+                <mat-grid-tile> <button class="boton">$200</button> </mat-grid-tile>
+                <mat-grid-tile> <button class="boton">$500</button> </mat-grid-tile>
+                <mat-grid-tile> <button class="boton">$1000</button> </mat-grid-tile>   
             </mat-grid-list>
               
+           <div align="center"><button class="boton" >Otro importe</button></div> <br>
               
+    
         </div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Volver</button>
+            <button mat-button matStepperNext>Siguiente</button>
           </ng-template>
         </mat-step>
         <mat-step>
           <ng-template matStepLabel>3 Metodos de pago</ng-template>
-          <p>This content was rendered eagerly</p>
-          <button mat-button matStepperPrevious>Back</button>
+         
+          <div class="cuadro3">
+           
+            <mat-grid-list cols="2" rowHeight="2:1">
+                <mat-grid-tile> <button class="pago">Tarjeta de debito</button></mat-grid-tile>
+                <mat-grid-tile> <button class="pago">Tarjeta de credito</button> </mat-grid-tile>
+    
+            </mat-grid-list>
+
+           <div align="center"><button class="pago">Mercado pago</button> </div> 
+        </div>
+
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext>Finalizar</button>
         </mat-step>
       </mat-stepper>
        </div>

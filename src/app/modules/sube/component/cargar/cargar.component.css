@@ -13,7 +13,7 @@
     background-color: #1382ED;
     border-radius: 12px;
     width: 250px;
-    height: 100px;
+    height: 70px;
     margin-bottom: 40px;
 }
 .p_cuadro1{
@@ -24,19 +24,32 @@
 
 .boton{
     margin-top: 5px;
-    background-color:#1382ED ;
-    border: none;
+    background-color:#d9d9d9 ;
     padding: 14px 14px; 
-    border-radius: 15px;
-    width: 30px;
+    border-radius: 8px;
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .boton1{
-    margin-top: 5px;
-    background-color:#1382ED ;
-    border: none;
+
+.pago{
+    margin-top: 1px;
+    background-color:#d9d9d9 ;
     padding: 14px 14px; 
-    border-radius: 15px;
-    width: 60%;
+    border-radius: 8px;
+    border-color: black;
+    border-width: 2px;
+    color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
+
+
+
