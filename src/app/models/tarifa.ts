@@ -1,4 +1,4 @@
 export interface Tarifa {
-    id: string;
+    idTarifa: string;
     tarifa: number;
 }
