@@ -42,14 +42,14 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar la tarifa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <h1>Tarifa actual: <!-- {{interpolación}} --></h1>
+      <div class="modal-body" [formGroup]="tarifa">
+        <h1>Tarifa actual: {{tarifa}} </h1>
         <h1 class="h1_modal">Ingrese la tarifa: </h1>
-        <input type="text" placeholder="Ingrese nueva tarifa" class="input" type="number">
+        <input type="text" placeholder="Ingrese nueva tarifa" class="input" type="number" formControlName="tarifa">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="actualizarTarifa()">Actualizar</button>
       </div>
     </div>
   </div>

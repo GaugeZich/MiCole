@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 import { Informacion } from 'src/app/models/informacion';
 import { map } from 'rxjs/operators'
 import { Usuario } from 'src/app/models/usuario';
+import { Tarifa } from 'src/app/models/tarifa';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,13 @@ export class CrudService {
   // Declaración de colección para usuarios
   private usuariosCollection: AngularFirestoreCollection<Usuario>
 
+  // Declaración para tarifa
+  private tarifaUnico: AngularFirestoreCollection<Tarifa>
+
   constructor(private database: AngularFirestore) {
     this.informacionCollection = database.collection('informacion')
     this.usuariosCollection = database.collection('usuarios')
+    this.tarifaUnico = database.collection('tarifa')
   }
 
   // CRUD para informacion:
@@ -100,5 +105,13 @@ export class CrudService {
         reject(error)
       }
     })
+  }
+
+  obtenerTarifa(){
+    return this.tarifaUnico.snapshotChanges().pipe(map(Action => Action.map(a => a.payload.doc.data())))
+  }
+
+  editarTarifa(tarifaUnico: '1', nuevaData: Tarifa){
+    return this.database.collection('tarifa').doc(tarifaUnico).update(nuevaData)
   }
 }
