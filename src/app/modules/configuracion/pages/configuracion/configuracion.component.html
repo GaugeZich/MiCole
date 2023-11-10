@@ -1,0 +1,90 @@
+<!-- Navbar importado de angular material -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para sidebar -->
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <a routerLink="/inicio">
+      <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    <h1>Configuración</h1>
+    
+</mat-toolbar>
+  
+  
+  <mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+      <div class="btn-group-sidenav">
+          <button class="button_sidenav" routerLink="/login">Cuenta</button>
+          <button class="button_sidenav">Configuración</button>
+          <button class="button_sidenav">Favorito</button>
+          <button class="button_sidenav">Ayuda</button>
+      </div>
+      
+       <!-- Espaciador -->
+      <div class="spacer-top">
+          <hr>
+          <div class="center">
+              <span class="texto_contacto">Contacto:</span>
+              <br>
+              <span>
+                  micoleappcipo@gmail.com
+                  <br>
+                  +54 299 XXX XXXX
+                  <br>
+                  XXXXXXXXXXXXXXXX
+              </span>
+          </div>
+      </div>
+</mat-sidenav>
+  
+    <mat-sidenav-content>
+        <!--Configuracion-->
+        <div class="container">
+            <div class="row">
+                <!--espacio para el modo oscuro-->
+                <div class="col">
+                    <h2>Modo oscuro</h2>
+                </div>
+                <div class="col">
+                    <!--dejo esto vacio para que el slider se coloque mas a la derecha -->
+                </div>
+                <div class="col">
+                    <mat-slide-toggle color="primary"></mat-slide-toggle>
+                </div>
+            </div>
+            <!--linea-->
+            <mat-divider></mat-divider>
+            <div class="row">
+                 <!--espacio para la activación de ubicación-->
+                <div class="col">
+                   <h2>Activar ubicación</h2>
+                </div>
+                <div class="col">
+                    <!--dejo esto vacio para que el slider se coloque mas a la derecha -->
+                </div>
+                <div class="col">
+                    <mat-slide-toggle color="primary"></mat-slide-toggle>
+                </div>
+            </div>
+            <!--linea-->
+            <mat-divider></mat-divider>
+            <div class="row">   
+                 <!--espacio para activar notificaciones-->
+                <div class="col">
+                    <h2>Activar notificaciones</h2>
+                </div>
+                <div class="col">
+                    <!--dejo esto vacio para que el slider se coloque mas a la derecha -->
+                </div>
+                <div class="col">
+                    <mat-slide-toggle color="primary"></mat-slide-toggle>
+                </div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+  

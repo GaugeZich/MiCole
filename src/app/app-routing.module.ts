@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/recorridos/recorridos.module').then(m=>m.RecorridosModule)
-  },
+  },    
   {
     path:"",loadChildren:()=>import('./modules/sube/sube.module').then(m=>m.SubeModule)
   },
@@ -23,6 +23,9 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/favoritos/favoritos.module').then(m=>m.FavoritosModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/configuracion/configuracion.module').then(m=>m.ConfiguracionModule)
   }
 ];
 
