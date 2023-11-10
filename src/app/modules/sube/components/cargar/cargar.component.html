@@ -81,11 +81,11 @@
           <mat-step>
             <ng-template matStepLabel>3 Metodos de pago</ng-template>
             
-            <div class="cuadro3">
+            <div class="cuadro3" id="finalizar">
               
               <mat-grid-list cols="2" rowHeight="2:1">
-                  <mat-grid-tile> <button class="pago">Tarjeta de debito</button></mat-grid-tile>
-                  <mat-grid-tile> <button class="pago">Tarjeta de credito</button> </mat-grid-tile>
+                  <mat-grid-tile> <button class="pago" routerLink="/tarjetas">Tarjeta de debito</button></mat-grid-tile>
+                  <mat-grid-tile> <button class="pago" routerLink="/tarjetas">Tarjeta de credito</button> </mat-grid-tile>
       
               </mat-grid-list>
     
@@ -93,7 +93,7 @@
           </div>
     
             <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Finalizar</button>
+            <button mat-button matStepperNext >Finalizar</button>
           </mat-step>
         </mat-stepper>
           </div>
@@ -110,11 +110,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <input type="number" name="" id="importedelusuario" class="boton" >
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Finalizar</button>
       </div>
     </div>
   </div>

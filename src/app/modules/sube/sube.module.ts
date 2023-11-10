@@ -21,12 +21,14 @@ import {MatInputModule} from '@angular/material/input';
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { CargarComponent } from './component/cargar/cargar.component';
+import { CargarComponent } from './components/cargar/cargar.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
 @NgModule({
   declarations: [
     SubeComponent,
-    CargarComponent
+    CargarComponent,
+    TarjetasComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +54,7 @@ import { CargarComponent } from './component/cargar/cargar.component';
     MatInputModule,
     RouterModule,
     MatSidenavModule,
-    MatStepperModule
+    MatStepperModule,
   ]
 })
 export class SubeModule { }
