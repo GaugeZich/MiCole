@@ -48,8 +48,8 @@
     <div class="container">
         <div class="center">
             <h1 style="margin-top: 130px;">Tarifa actual</h1>
-            <div >
-                <p class="cuadro">*Tarifa*$</p>
+            <div *ngFor="let i of tarifaUnica">
+                <p class="cuadro">{{i.tarifa}}$</p>
             </div>
         </div>
         <hr>
