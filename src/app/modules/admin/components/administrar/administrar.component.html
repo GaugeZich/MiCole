@@ -1,0 +1,144 @@
+<!-- Navbar modificado para la vista de Administración -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para volver -->
+ 
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/admin">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <a routerLink="/inicio">
+        <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    
+    <h1>Administración</h1>
+</mat-toolbar>
+
+<!-- Administrar: -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="center">
+        <button class="boton" data-bs-toggle="modal" data-bs-target="#agregarusuario">Agregar manualmente</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-body">
+  <ul class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let col of coleccionUsuarios">
+      <span class="span_modal">{{col.email}}</span>
+      <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editar" (click)="mostrarModalEditar(col)">
+      <mat-icon>edit</mat-icon>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<!-- Modal para editar los usuarios -->
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor="let col of coleccionUsuarios">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar usuario:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div [formGroup]="usuario" class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">N° de Sube:</label>
+          <input class="form-control" type="number" placeholder="{{col.sube}}" formControlName="sube" maxlength="16" minlength="16">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nombre:</label>
+          <input class="form-control" type="text" placeholder="{{col.nombre}}" formControlName="nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Apellido:</label>
+          <input class="form-control" type="text" placeholder="{{col.apellido}}" formControlName="apellido">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input class="form-control" type="email" placeholder="{{col.email}}" formControlName="email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">DNI:</label>
+          <input class="form-control" type="number" placeholder="{{col.dni}}" formControlName="dni" maxlength="8" minlength="8">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña:</label>
+          <input class="form-control" type="text" placeholder="{{col.contrasena}}" formControlName="contrasena" minlength="6">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña1:</label>
+          <input class="form-control" type="text" placeholder="{{col.contrasena1}}" formControlName="contrasena1" minlength="6">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rol:</label>
+          <select class="form-control" class="form-select" formControlName="rol">
+            <option value="usuario">Usuario</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarUsuario()">Guardar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="borrarUsuario()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para agregar usuarios manualmente -->
+<div class="modal fade" id="agregarusuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuario:</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [formGroup]="usuario">
+        <div class="mb-3">
+          <label class="form-label">N° de Sube:</label>
+          <input class="form-control" type="number" formControlName="sube" placeholder="XXXX-XXXX-XXXX-XXXX" minlength="16" maxlength="16" [(ngModel)]="usuarios.sube">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nombre:</label>
+          <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre del usuario" [(ngModel)]="usuarios.nombre">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Apellido:</label>
+          <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido del usuario" [(ngModel)]="usuarios.apellido">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input class="form-control" type="email" formControlName="email" placeholder="emaildelusuario@email.com" [(ngModel)]="usuarios.email">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">DNI:</label>
+          <input class="form-control" type="number" formControlName="dni" placeholder="DNI del usuario: XX XXX XXX" maxlength="8" [(ngModel)]="usuarios.dni">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña:</label>
+          <input class="form-control" type="text" formControlName="contrasena" placeholder="Contraseña del usuario" minlength="6" [(ngModel)]="usuarios.contrasena">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña1:</label>
+          <input class="form-control" type="text" formControlName="contrasena1" placeholder="Contraseña del usuario" [(ngModel)]="usuarios.contrasena1">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rol:</label>
+          <select class="form-control" class="form-select" formControlName="rol" [(ngModel)]="usuarios.rol">
+            <option value="usuario" selected>Usuario</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="agregarUsuario()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,24 +1,4 @@
-#boton{
-border: none;
-border-radius: 10px;
-width: 200px;
-height: 75px;
-margin: auto;
-background-color: #1382ed;
-margin-top: 50px;
-color: black;
-font-size: x-large;
-font-weight: 400;
-margin-top: 30%;
-}
-
-.botones{
-    margin: auto;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
+/* Nabar: */
 .example-spacer {
     flex: 1 1 auto;
 }
@@ -49,17 +29,6 @@ margin-top: 30%;
 ::placeholder{
     color: black;
 }
-
-.buscador{
-    background: url("../../../../../assets/search-icon.png") no-repeat right;
-    background-size: 20px;
-    background-color:  #3C96EE;
-    border-radius: 7px;
-    height: 40%;
-    width: 53%;
-    font-size: large;
-}
-
 
 mat-sidenav-container{
     height: calc(205vh - 115vh);
@@ -98,14 +67,48 @@ hr{
     border-bottom: none; /* Prevent double borders */
 }
 
-.button{
+.center{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.h1_info{
+    font-size: 40px;
+    margin-bottom: 7px;
+    color: black;
+    margin-top: 25px;
+}
+
+.boton{
+    border: none;
     border-radius: 10px;
-    border-width: 3px;
     width: 200px;
     height: 75px;
-    margin-top: 100px;
+    margin: auto;
+    background-color: #1382ed;
     color: black;
     font-size: x-large;
     font-weight: 400;
+    margin-top: 30%;
+}
 
+.modal{
+    margin-top: 50px;
+}
+
+.input{
+    height: 32px;
+    font-size: large;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.h1_modal{
+    margin-bottom: 0px;
+}
+
+.span_modal{
+    font-size: 18px;
 }

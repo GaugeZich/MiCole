@@ -1,0 +1,101 @@
+<!-- Navbar modificado para la vista de Administración -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para volver -->
+ 
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/admin">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <a routerLink="/inicio">
+        <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    
+    <h1>Administración</h1>
+</mat-toolbar>
+
+<!-- Subir -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="center">
+        <!-- Botón para el modal de actualizar la tarifa -->
+        <button class="boton" data-bs-target="#actualizar" data-bs-toggle="modal">Actualizar Tarifa</button>
+        <div class="div" *ngFor="let i of tarifaUnica">
+          <h1 class="h1_info">Tarifa actual:
+            <br>
+            {{i.tarifa}}$
+          </h1>
+        </div>
+        <!-- Botón para el modal de subir información -->
+        <button class="boton" data-bs-target="#subir" data-bs-toggle="modal">Subir Información</button>
+        <!-- Botón para el modal de eliminar información -->
+        <button class="boton" data-bs-target="#eliminar" data-bs-toggle="modal">Eliminar Información</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para actualizar la tarifa -->
+<div class="modal fade" id="actualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizar la tarifa</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [formGroup]="tarifa">
+        <div class="div" *ngFor="let i of tarifaUnica">
+          <h1>Tarifa actual: {{i.tarifa}} </h1>
+        </div>
+        <h1 class="h1_modal">Ingrese la tarifa: </h1>
+        <input type="text" placeholder="Ingrese nueva tarifa" class="input" type="number" formControlName="tarifa">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="actualizarTarifa()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para subir información-->
+<div class="modal fade" id="subir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Subir información</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" [formGroup]="informacion">
+        <h1 class="h1_modal">Ingrese el titulo de la información: </h1>
+        <input type="text" placeholder="Ingrese titulo" class="input" type="text" formControlName="titulo">
+        <h1 class="h1_modal">Ingrese la razon de la información: </h1>
+        <input type="text" placeholder="Ingrese razon" class="input" type="text" formControlName="razon">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="agregarInformacion()" data-bs-dismiss="modal">Subir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar información</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <app-list></app-list>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

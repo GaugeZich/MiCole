@@ -30,7 +30,7 @@ export class RegisterComponent {
     dni: '', //dni del usuario
     contrasena: '', //contrasena del usuario
     contrasena1:'', //confirmar la ontrsena del usuario
-    rol:'' //confirmar el rol que cumple
+    rol:'usuario' //confirmar el rol que cumple
   }
 
   //es el uid para conectar con la base de datos 
