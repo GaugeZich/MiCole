@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CrudService } from '../../services/crud.service';
+import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-administrar',
@@ -25,40 +27,68 @@ export class AdministrarComponent {
   })
 
   constructor(
-    public servicioCrud : CrudService
+    public servicioCrud: CrudService,
+    public servicioFirestore: FirestoreService,
+    public servicioAuth: AuthService
   ){}
 
-  ngOnInit(): void{
+  async ngOnInit(): Promise<void>{
     this.servicioCrud.obtenerUsuario().subscribe(usuario => {
       this.coleccionUsuarios = usuario
+    });
+    const uid = await this.servicioAuth.getUid();
+    console.log(uid);
+  }
+
+  //importo el modelo
+  usuarios: Usuario={
+    uid: '', // id para autentificacion
+    sube: '', //numero de sube 
+    nombre: '', //nombre del usuario
+    apellido: '', //apellido del usuario
+    email: '', //email del usuario
+    dni: '', //dni del usuario
+    contrasena: '', //contrasena del usuario
+    contrasena1:'', //confirmar la ontrsena del usuario
+    rol:'usuario' //confirmar el rol que cumple
+  }
+
+  //es el uid para conectar con la base de datos 
+  uid= '';
+
+  async agregarUsuario(){
+    const credenciales = {
+      email: this.usuarios.email,
+      contrasena: this.usuarios.contrasena
+    }
+    const res = await this.servicioAuth.registrar(credenciales.email, credenciales.contrasena)
+    .then(res => {
+      alert("Ha agregado un nuevo usuario con exito")
+    })
+    .catch(error => {
+      alert("Hubo un problema al agregar usuario \n"+error)
+    })
+
+    // Creamos una constante para el UID que obtengamos
+    const uid = await this.servicioAuth.getUid();
+
+    // Lo referenciamos con el de usuarios
+    this.usuarios.uid=uid;
+
+    // Y por ultimo llamamos a la función guardarUser()
+    this.guardarUser()
+  }
+
+  async guardarUser(){
+    this.servicioFirestore.agregarUsuario(this.usuarios,this.usuarios.uid)
+    .then(res => {
+      console.log(this.usuarios)
+    })
+    .catch(error => {
+      console.log("Error =>" +error)
     })
   }
 
-  // Funcion asyncronica para agregar usuarios manualmente
-  async agregarUsuario(){
-    if(this.usuario.valid){
-      let nuevousuario: Usuario = {
-        uid: '',
-        sube: this.usuario.value.sube!,
-        nombre: this.usuario.value.nombre!,
-        apellido: this.usuario.value.apellido!,
-        email: this.usuario.value.email!,
-        dni: this.usuario.value.dni!,
-        contrasena: this.usuario.value.contrasena!,
-        contrasena1: this.usuario.value.contrasena1!,
-        rol: this.usuario.value.rol!,
-
-      };
-      // Llamamos al servicioCrud, función crearusuario; seteamos nuevousuario
-      await this.servicioCrud.crearUsuario(nuevousuario)
-      .then(usuario => {
-        alert("Ha agregado un nuevo usuario con exito")
-      })
-      .catch(error => {
-        alert("Hubo un error al cargar un nuevo usuario \n"+error)
-      })
-    }
-  }
 
 // Funcion para editar los usuarios
 mostrarModalEditar(usuarioSeleccionado: Usuario){

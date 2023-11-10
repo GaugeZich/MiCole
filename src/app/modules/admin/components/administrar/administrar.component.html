@@ -101,35 +101,35 @@
       <div class="modal-body" [formGroup]="usuario">
         <div class="mb-3">
           <label class="form-label">N° de Sube:</label>
-          <input class="form-control" type="number" formControlName="sube" placeholder="XXXX-XXXX-XXXX-XXXX" minlength="16" maxlength="16">
+          <input class="form-control" type="number" formControlName="sube" placeholder="XXXX-XXXX-XXXX-XXXX" minlength="16" maxlength="16" [(ngModel)]="usuarios.sube">
         </div>
         <div class="mb-3">
           <label class="form-label">Nombre:</label>
-          <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre del usuario">
+          <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre del usuario" [(ngModel)]="usuarios.nombre">
         </div>
         <div class="mb-3">
           <label class="form-label">Apellido:</label>
-          <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido del usuario">
+          <input class="form-control" type="text" formControlName="apellido" placeholder="Apellido del usuario" [(ngModel)]="usuarios.apellido">
         </div>
         <div class="mb-3">
           <label class="form-label">Email:</label>
-          <input class="form-control" type="email" formControlName="email" placeholder="emaildelusuario@email.com">
+          <input class="form-control" type="email" formControlName="email" placeholder="emaildelusuario@email.com" [(ngModel)]="usuarios.email">
         </div>
         <div class="mb-3">
           <label class="form-label">DNI:</label>
-          <input class="form-control" type="number" formControlName="dni" placeholder="DNI del usuario: XX XXX XXX" maxlength="8">
+          <input class="form-control" type="number" formControlName="dni" placeholder="DNI del usuario: XX XXX XXX" maxlength="8" [(ngModel)]="usuarios.dni">
         </div>
         <div class="mb-3">
           <label class="form-label">Contraseña:</label>
-          <input class="form-control" type="text" formControlName="contrasena" placeholder="Contraseña del usuario" minlength="6">
+          <input class="form-control" type="text" formControlName="contrasena" placeholder="Contraseña del usuario" minlength="6" [(ngModel)]="usuarios.contrasena">
         </div>
         <div class="mb-3">
           <label class="form-label">Contraseña1:</label>
-          <input class="form-control" type="text" formControlName="contrasena1" placeholder="Contraseña del usuario">
+          <input class="form-control" type="text" formControlName="contrasena1" placeholder="Contraseña del usuario" [(ngModel)]="usuarios.contrasena1">
         </div>
         <div class="mb-3">
           <label class="form-label">Rol:</label>
-          <select class="form-control" class="form-select" formControlName="rol">
+          <select class="form-control" class="form-select" formControlName="rol" [(ngModel)]="usuarios.rol">
             <option value="usuario" selected>Usuario</option>
             <option value="admin">Admin</option>
           </select>
