@@ -1,0 +1,69 @@
+<!-- Navbar importado de angular material -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para sidebar -->
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <a routerLink="/inicio">
+      <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    
+    <h1>Favoritos</h1>
+  </mat-toolbar>
+  
+  
+  <mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+      <div class="btn-group-sidenav">
+          <button class="button_sidenav" routerLink="/login">Cuenta</button>
+          <button class="button_sidenav">Configuración</button>
+          <button class="button_sidenav" routerLink="/favoritos">Favorito</button>
+          <button class="button_sidenav">Ayuda</button>
+      </div>
+      
+       <!-- Espaciador -->
+      <div class="spacer-top">
+          <hr>
+          <div class="center">
+              <span class="texto_contacto">Contacto:</span>
+              <br>
+              <span>
+                  micoleappcipo@gmail.com
+                  <br>
+                  +54 299 XXX XXXX
+                  <br>
+                  XXXXXXXXXXXXXXXX
+              </span>
+          </div>
+      </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  
+  
+    <!-- Favoritos -->
+    
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <!--estos div quedan vacios para que quede centrado-->
+          </div>
+          <div class="col">
+            <!--Icono de estrella -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="bi bi-star-fill" viewBox="0 0 16 16">
+                <path  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg>
+            <br><br>
+            <h2 style="font-size: large;">Aquí se guardaran sus recorridos favoritos</h2>
+          </div>
+          <div class="col">
+            <!--estos div quedan vacios para que quede centrado-->
+          </div>
+        </div>
+    </div>
+    
+  
+  </mat-sidenav-content>
+  </mat-sidenav-container>
