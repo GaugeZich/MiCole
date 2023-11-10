@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cargar.component.css']
 })
 export class CargarComponent {
-
+  opened = false;
 }

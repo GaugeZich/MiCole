@@ -1,54 +1,104 @@
 
+<!-- Navbar importado de angular material -->
+<mat-toolbar style="background-color: #1382ED;">
+  <!-- Boton para sidebar -->
+
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a routerLink="/inicio">
+      <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+  </a>
+  <span class="example-spacer"></span> <!-- Espaciador -->
+  
+      <!-- Buscador de: ¿A donde quieres ir? -->
+  <input type="text" class="buscador" placeholder="¿A donde quieres ir?">
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+<mat-sidenav [(opened)]="opened">
+    <div class="btn-group-sidenav">
+        <button class="button_sidenav" routerLink="./login">Cuenta</button>
+        <button class="button_sidenav">Configuración</button>
+        <button class="button_sidenav">Favorito</button>
+        <button class="button_sidenav">Ayuda</button>
+    </div>
+    
+     <!-- Espaciador -->
+    <div class="spacer-top">
+        <hr>
+        <div class="center">
+            <span class="texto_contacto">Contacto:</span>
+            <br>
+            <span>
+                micoleappcipo@gmail.com
+                <br>
+                +54 299 XXX XXXX
+                <br>
+                XXXXXXXXXXXXXXXX
+            </span>
+        </div>
+    </div>
+</mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- Cargar -->
 
     <div class="container" style="margin-top: 100px;">
-    <div class="center">
-    <mat-stepper orientation="vertical">
-        <mat-step>
-          <ng-template matStepLabel>1 N° SUBE</ng-template>
-          <ng-template matStepContent>
-        <div class="cuadro1">
-         <p class="p_cuadro1">XXXX-XXXX</p>
-        </div>
-            <button mat-button matStepperNext>Siguiente</button>
-          </ng-template>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>2 ¿cuanto recargara?</ng-template>
-          <ng-template matStepContent>
-        <div class="cuadro2">
-           
-            <mat-grid-list cols="2" rowHeight="2:2">
-                <mat-grid-tile> <button class="boton">$100</button></mat-grid-tile>
-                <mat-grid-tile> <button class="boton">$200</button> </mat-grid-tile>
-                <mat-grid-tile> <button class="boton">$500</button> </mat-grid-tile>
-                <mat-grid-tile> <button class="boton">$1000</button> </mat-grid-tile>   
-            </mat-grid-list>
+      <div class="center">
+      <mat-stepper orientation="vertical">
+          <mat-step>
+            <ng-template matStepLabel>1 N° SUBE</ng-template>
+            <ng-template matStepContent>
+          <div class="cuadro1">
+             <p class="p_cuadro1">XXXX-XXXX<br><br>XXXX-XXXX</p>
+          </div>
+              <button mat-button matStepperNext>Siguiente</button>
+            </ng-template>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>2 ¿cuanto recargara?</ng-template>
+            <ng-template matStepContent>
+          <div class="cuadro2">
               
-           <div align="center"><button class="boton" >Otro importe</button></div> <br>
+              <mat-grid-list cols="2" rowHeight="2:2">
+                  <mat-grid-tile> <button class="boton">$100</button></mat-grid-tile>
+                  <mat-grid-tile> <button class="boton">$200</button> </mat-grid-tile>
+                  <mat-grid-tile> <button class="boton">$500</button> </mat-grid-tile>
+                  <mat-grid-tile> <button class="boton">$1000</button> </mat-grid-tile>   
+              </mat-grid-list>
+                
+              <div align="center"><button class="boton" >Otro importe</button></div> <br>
+                
+      
+          </div>
+              <button mat-button matStepperPrevious>Volver</button>
+              <button mat-button matStepperNext>Siguiente</button>
+            </ng-template>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>3 Metodos de pago</ng-template>
+            
+            <div class="cuadro3">
               
+              <mat-grid-list cols="2" rowHeight="2:1">
+                  <mat-grid-tile> <button class="pago">Tarjeta de debito</button></mat-grid-tile>
+                  <mat-grid-tile> <button class="pago">Tarjeta de credito</button> </mat-grid-tile>
+      
+              </mat-grid-list>
     
-        </div>
+              <div align="center"><button class="pago">Mercado pago</button> </div> 
+          </div>
+    
             <button mat-button matStepperPrevious>Volver</button>
-            <button mat-button matStepperNext>Siguiente</button>
-          </ng-template>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>3 Metodos de pago</ng-template>
-         
-          <div class="cuadro3">
-           
-            <mat-grid-list cols="2" rowHeight="2:1">
-                <mat-grid-tile> <button class="pago">Tarjeta de debito</button></mat-grid-tile>
-                <mat-grid-tile> <button class="pago">Tarjeta de credito</button> </mat-grid-tile>
-    
-            </mat-grid-list>
+            <button mat-button matStepperNext>Finalizar</button>
+          </mat-step>
+        </mat-stepper>
+          </div>
+      </div>
 
-           <div align="center"><button class="pago">Mercado pago</button> </div> 
-        </div>
-
-          <button mat-button matStepperPrevious>Volver</button>
-          <button mat-button matStepperNext>Finalizar</button>
-        </mat-step>
-      </mat-stepper>
-       </div>
-    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+  
