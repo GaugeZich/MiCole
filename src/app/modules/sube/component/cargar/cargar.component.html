@@ -70,7 +70,7 @@
                   <mat-grid-tile> <button class="boton">$1000</button> </mat-grid-tile>   
               </mat-grid-list>
                 
-              <div align="center"><button class="boton" >Otro importe</button></div> <br>
+              <div align="center"><button class="boton" data-bs-toggle="modal" data-bs-target="#otroimporte">Otro importe</button></div> <br>
                 
       
           </div>
@@ -102,3 +102,20 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
   
+<div class="modal fade" id="otroimporte" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Que importe desea seleccionar?</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
