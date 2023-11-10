@@ -21,8 +21,9 @@ export class SubirComponent {
     razon: new FormControl('',Validators.required)
   })
 
+  // Recibe el valor del usuario e inicializado en 0
   tarifa = new FormGroup({
-    tarifa: new FormControl(1500,Validators.required)
+    tarifa: new FormControl(0,Validators.required)
   })
 
   constructor(
@@ -54,7 +55,7 @@ export class SubirComponent {
         tarifa: this.tarifa.value.tarifa!
       }
 
-      this.servicioCrud.editarTarifa(this.tarifaUnica, nuevaTarifa)
+      this.servicioCrud.editarTarifa('1',nuevaTarifa)
       .then(tarifa => {
         alert("La tarifa ha sido modificada con exito")
       })
@@ -62,5 +63,11 @@ export class SubirComponent {
         alert("No se pudo modificar la tarifa \n" +error)
       })
     }
+  }
+  /* Inicializa con ngOnInit y hace uso de obtenerTarifa del servicio para obtener la colección */
+  ngOnInit(): void{
+    this.servicioCrud.obtenerTarifa().subscribe(tarifa => {
+      this.tarifaUnica = tarifa;
+    })
   }
 }

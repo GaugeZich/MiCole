@@ -21,10 +21,12 @@
       <div class="center">
         <!-- Botón para el modal de actualizar la tarifa -->
         <button class="boton" data-bs-target="#actualizar" data-bs-toggle="modal">Actualizar Tarifa</button>
-        <h1 class="h1_info">Tarifa actual:
-          <br>
-          <!--{{interpolacion}}-->$
-        </h1>
+        <div class="div" *ngFor="let i of tarifaUnica">
+          <h1 class="h1_info">Tarifa actual:
+            <br>
+            {{i.tarifa}}$
+          </h1>
+        </div>
         <!-- Botón para el modal de subir información -->
         <button class="boton" data-bs-target="#subir" data-bs-toggle="modal">Subir Información</button>
         <!-- Botón para el modal de eliminar información -->
@@ -43,7 +45,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" [formGroup]="tarifa">
-        <h1>Tarifa actual: {{tarifa}} </h1>
+        <div class="div" *ngFor="let i of tarifaUnica">
+          <h1>Tarifa actual: {{i.tarifa}} </h1>
+        </div>
         <h1 class="h1_modal">Ingrese la tarifa: </h1>
         <input type="text" placeholder="Ingrese nueva tarifa" class="input" type="number" formControlName="tarifa">
       </div>
