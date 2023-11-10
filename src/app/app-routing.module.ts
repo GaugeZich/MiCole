@@ -14,12 +14,15 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/recorridos/recorridos.module').then(m=>m.RecorridosModule)
-  },
+  },    
   {
     path:"",loadChildren:()=>import('./modules/sube/sube.module').then(m=>m.SubeModule)
   },
   {
     path:"",loadChildren:()=>import('./modules/informacion/informacion.module').then(m=>m.InformacionModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/configuracion/configuracion.module').then(m=>m.ConfiguracionModule)
   }
 ];
 

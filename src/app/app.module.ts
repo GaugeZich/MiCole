@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfiguracionRoutingModule } from './modules/configuracion/configuracion-routing.module';
 
 // AuthModule
 import { AuthModule } from './modules/auth/auth.module';
@@ -21,9 +22,11 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -33,11 +36,11 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireStorageModule,
- 
     SharedModule,
     RecorridosModule,
     SubeModule,
-    InformacionModule
+    InformacionModule,
+    ConfiguracionRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
