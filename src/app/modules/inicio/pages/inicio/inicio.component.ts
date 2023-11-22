@@ -19,15 +19,9 @@ export class InicioComponent implements OnInit{
   ngOnInit(): void{
     this.userService.auth.currentUser.then((userLogeado) => {
       this.crud.obtenerUsuario().subscribe(usuarios => {
-        if(userLogeado){
-          for (let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].uid == userLogeado.uid){
-              if(usuarios[i].rol == 'admin'){
-                this.admin = true;
-                break;
-              }
-            }
-          }
+        if (userLogeado) {
+          const isAdmin = usuarios.find(usuario => usuario.uid === userLogeado.uid && usuario.rol === 'admin');
+          this.admin = isAdmin !== undefined;
         }
       })
     })
