@@ -24,12 +24,14 @@ import { AuthService } from './services/auth.service';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { RegisterComponent } from './register/register.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
     LoginComponent,
+    CuentaComponent
   ],
   imports: [
     CommonModule,
