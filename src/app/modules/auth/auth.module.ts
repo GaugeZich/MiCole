@@ -26,6 +26,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import { RegisterComponent } from './register/register.component';
 import { CuentaComponent } from './cuenta/cuenta.component';
 
+// Importaciones para el navbar:
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatToolbarModule,
     // ANGULAR
 
     FormsModule,
