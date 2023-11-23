@@ -109,3 +109,18 @@ hr{
     font-weight: 400;
 
 }
+
+#boton_sube{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    margin-top: 50px;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+    margin-top: 30%;
+    
+}
