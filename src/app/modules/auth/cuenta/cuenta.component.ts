@@ -19,7 +19,7 @@ export class CuentaComponent {
     .then(res => {
       alert("Se ha cerrado la sesion correctamente");
       console.log(res);
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/login'])
     })
   }
 }

@@ -110,17 +110,29 @@ hr{
 
 }
 
-#boton_sube{
+.boton_sube{
     border: none;
     border-radius: 10px;
     width: 200px;
     height: 75px;
     margin: auto;
     background-color: #1382ed;
-    margin-top: 50px;
+    margin-top: 100px;
     color: black;
     font-size: x-large;
     font-weight: 400;
-    margin-top: 30%;
     
+}
+
+.boton_sube2{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    margin-top: 100px;
+    color: black;
+    font-size: x-large;
+    font-weight: 400; 
 }

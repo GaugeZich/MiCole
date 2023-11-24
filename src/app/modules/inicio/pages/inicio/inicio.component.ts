@@ -13,34 +13,23 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class InicioComponent implements OnInit{
   opened = false;
   admin = false;
-  sube= false
+
 
   constructor(
     private authService: AuthService,
     private crud: CrudService,
     private router: Router,
     private auth: AngularFireAuth
-  ){
-    
+  ){}
 
-  }
-
-  
-
-  ngOnInit(): void{
+  async ngOnInit(): Promise<void>{
     this.authService.auth.currentUser.then((userLogeado) => {
       this.crud.obtenerUsuario().subscribe(usuarios => {
         if (userLogeado) {
-          this.sube=true;
+
+
           const isAdmin = usuarios.find(usuario => usuario.uid === userLogeado.uid && usuario.rol === 'admin');
           this.admin = isAdmin !== undefined;
-        }else{
-          
-          // const btn_sube = document.getElementById('boton_sube');
-          // if (btn_sube) {
-          //   btn_sube.setAttribute('disabled', '');
-          //   btn_sube.style.backgroundColor = '#5ea2e2';
-          // }
         }
       })
     })    
@@ -51,6 +40,16 @@ export class InicioComponent implements OnInit{
     this.auth.authState.subscribe(usuarios => {
       if(usuarios) {
         this.router.navigate(['/cuenta'])
+      }else{
+        this.router.navigate(['/login'])
+      }
+    })
+  }
+
+  entrarSube(){
+    this.auth.authState.subscribe(usuarios => {
+      if(usuarios) {
+        this.router.navigate(['/sube'])
       }else{
         this.router.navigate(['/login'])
       }
