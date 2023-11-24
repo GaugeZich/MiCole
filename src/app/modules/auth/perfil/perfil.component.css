@@ -66,3 +66,21 @@ hr{
 .btn-group-sidenav .button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
 }
+
+/* Perfil */
+
+.col{
+    padding: 35px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.person-icon{
+    padding: 35px;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    font-size: 250px;
+}
