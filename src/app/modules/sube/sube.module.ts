@@ -24,6 +24,9 @@ import { RouterModule } from '@angular/router';
 import { CargarComponent } from './components/cargar/cargar.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 
+
+
+
 @NgModule({
   declarations: [
     SubeComponent,
