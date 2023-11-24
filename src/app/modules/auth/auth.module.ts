@@ -28,12 +28,14 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 
 // Importaciones para el navbar:
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
     RegisterComponent,
     LoginComponent,
-    CuentaComponent
+    CuentaComponent,
+    PerfilComponent
   ],
   imports: [
     CommonModule,
