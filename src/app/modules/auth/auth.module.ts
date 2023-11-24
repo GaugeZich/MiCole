@@ -24,12 +24,16 @@ import { AuthService } from './services/auth.service';
 import {MatDividerModule} from '@angular/material/divider';
 
 import { RegisterComponent } from './register/register.component';
+import { CuentaComponent } from './cuenta/cuenta.component';
 
+// Importaciones para el navbar:
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     RegisterComponent,
     LoginComponent,
+    CuentaComponent
   ],
   imports: [
     CommonModule,
@@ -45,6 +49,7 @@ import { RegisterComponent } from './register/register.component';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatToolbarModule,
     // ANGULAR
 
     FormsModule,

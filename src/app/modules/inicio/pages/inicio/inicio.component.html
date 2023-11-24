@@ -19,7 +19,7 @@
 <mat-sidenav-container>
 <mat-sidenav [(opened)]="opened">
     <div class="btn-group-sidenav">
-        <button class="button_sidenav" routerLink="/login">Cuenta</button>
+        <button class="button_sidenav" (click)="entrarCuenta()">Cuenta</button>
         <button class="button_sidenav" routerLink="/configuracion">Configuración</button>
         <button class="button_sidenav" routerLink="/favoritos">Favorito</button>
         <button class="button_sidenav">Ayuda</button>
@@ -50,9 +50,9 @@
       <div class="col">
         <div class="botones">
           <button id="boton" routerLink="/recorridos">Recorridos</button>
-          <button id="boton" routerLink="/sube">SUBE</button>
+          <button class="boton_sube2" (click)="entrarSube()">SUBE</button>
           <button id="boton" routerLink="/informacion">Información</button>
-          <div class="div">
+          <div class="div" *ngIf="admin">
             <button routerLink="/admin" class="button">Administración</button>
           </div>
         </div>
