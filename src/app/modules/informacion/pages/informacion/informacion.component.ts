@@ -3,7 +3,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Tarifa } from 'src/app/models/tarifa';
 import { CrudService } from 'src/app/modules/admin/services/crud.service';
-import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-informacion',
@@ -17,7 +16,6 @@ export class InformacionComponent {
 
   constructor(
     public servicioCrud: CrudService,
-    private authService: AuthService,
     private router: Router,
     private auth: AngularFireAuth
   ){}
