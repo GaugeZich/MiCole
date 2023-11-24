@@ -18,8 +18,8 @@
   <mat-sidenav-container>
   <mat-sidenav [(opened)]="opened">
       <div class="btn-group-sidenav">
-          <button class="button_sidenav" routerLink="/login">Cuenta</button>
-          <button class="button_sidenav">Configuración</button>
+          <button class="button_sidenav" (click)="entrarCuenta()">Cuenta</button>
+          <button class="button_sidenav" routerLink="/configuracion">Configuración</button>
           <button class="button_sidenav" routerLink="/favoritos">Favorito</button>
           <button class="button_sidenav">Ayuda</button>
       </div>
