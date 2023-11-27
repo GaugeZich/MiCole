@@ -78,9 +78,25 @@ p{
 }
 
 .person-icon{
-    padding: 35px;
+    padding: 0px;
     align-items: end;
     display: flex;
     flex-direction: column;
-    font-size: 250px;
+    font-size: 125px;
+
+}
+
+.container{
+    margin-top: 30px;
+}
+
+.boton{
+    
+}
+
+.botones{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
