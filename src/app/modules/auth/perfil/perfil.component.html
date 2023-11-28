@@ -50,7 +50,50 @@
 </div>
 
 <div class="botones">
-  <button class="boton">Cambiar datos</button>
+  <button class="boton" data-bs-toggle="modal" data-bs-target="#modalEditar">Cambiar datos</button>
   <br><br>
   <button class="boton1" (click)="confirmarBorrar()">Borrar cuenta</button>
+</div>
+
+<!-- Modal para editar -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar datos de la cuenta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.nombre}}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.apellido}}" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input class="form-control" type="email" placeholder="{{info_cuenta?.email}}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">DNI:</label>
+            <input class="form-control" type="number" placeholder="{{info_cuenta?.dni}}" maxlength="8" minlength="8">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">N° de Sube:</label>
+            <input class="form-control" type="number" placeholder="{{info_cuenta?.sube}}"  maxlength="16" minlength="16">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Contraseña:</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.contrasena}}" minlength="6">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>

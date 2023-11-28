@@ -36,7 +36,6 @@ export class PerfilComponent implements OnInit{
     })    
   }
 
-
   confirmarBorrar() {
     if (confirm("¿Está seguro?")) {
       this.borrarInformacion();
