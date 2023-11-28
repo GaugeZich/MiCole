@@ -3,6 +3,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { CrudService } from '../../admin/services/crud.service';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -20,7 +21,8 @@ export class PerfilComponent implements OnInit{
   constructor(
     public servicioCrud: CrudService,
     public servicioFirestore: FirestoreService,
-    public servicioAuth: AuthService
+    public servicioAuth: AuthService,
+    public router: Router
   ){}
 
   async ngOnInit(): Promise<void>{
@@ -33,4 +35,26 @@ export class PerfilComponent implements OnInit{
       })
     })    
   }
+
+
+  confirmarBorrar() {
+    if (confirm("¿Está seguro?")) {
+      this.borrarInformacion();
+    }
+  }
+
+  borrarInformacion() {
+    if (this.info_cuenta) {
+      this.servicioCrud.eliminarUsuario(this.info_cuenta.uid)
+        .then(res => {
+          alert("La información ha sido eliminada correctamente!");
+          this.servicioAuth.cerrarSesion()
+          this.router.navigate(['/login']);
+        })
+        .catch(error => {
+          alert("Hubo un error al eliminar la información: \n" + error);
+        });
+    }
+  }
+
 }
