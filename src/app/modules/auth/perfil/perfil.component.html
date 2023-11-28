@@ -10,41 +10,42 @@
         <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
     </a>
     <span class="example-spacer"></span> <!-- Espaciador -->
-    
+    <i class="material-icons person-icon">person</i>
     <h1>Perfil</h1>
 </mat-toolbar>
 
 <!-- Perfil -->
-
+<div class="center">
+  <h1>Datos de la cuenta:</h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="col">
-      <p>Nombre:</p>
-      <p></p>
-      <br><br>
+      <p class="subrayado">Nombre:</p>
+      <p>{{info_cuenta?.nombre}}</p>
+      <br>
 
-      <p>Apellido:</p>
-      <p></p>
-      <br><br>
+      <p class="subrayado">Apellido:</p>
+      <p>{{info_cuenta?.apellido}}</p>
+      <br>
 
-      <p>Email:</p>
-      <p></p>
-      <br><br>
+      <p class="subrayado">Email:</p>
+      <p>{{info_cuenta?.email}}</p>
+      <br>
       
-      <p>DNI</p>
-      <p></p>
-      <br><br>
+      <p class="subrayado">DNI:</p>
+      <p>{{info_cuenta?.dni}}</p>
+      <br>
       
-      <p>SUBE:</p>
-      <p></p>
-      <br><br>
+      <p class="subrayado">SUBE:</p>
+      <p>{{info_cuenta?.sube}}</p>
+      <br>
       
-      <p>Contraseña:</p>
-      <p></p>
+      <p class="subrayado">Contraseña:</p>
+      <p>{{info_cuenta?.contrasena}}</p>
       <br><br>
       
     </div>
-    <div class="col"><i class="material-icons person-icon">person</i></div>
   </div>
 </div>
 

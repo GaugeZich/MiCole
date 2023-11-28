@@ -15,6 +15,8 @@ export class PerfilComponent implements OnInit{
 
   usuarioSeleccionado!: Usuario;
 
+  info_cuenta: Usuario | undefined;
+
   constructor(
     public servicioCrud: CrudService,
     public servicioFirestore: FirestoreService,
@@ -25,8 +27,8 @@ export class PerfilComponent implements OnInit{
     this.servicioAuth.auth.currentUser.then((userLogeado) => {
       this.servicioCrud.obtenerUsuario().subscribe(usuarios => {
         if (userLogeado) {
-          const info_cuenta = usuarios.find(usuario => usuario.uid === userLogeado.uid);
-          console.log(info_cuenta);
+          this.info_cuenta = usuarios.find(usuario => usuario.uid === userLogeado.uid);
+          console.log(this.info_cuenta);
         }
       })
     })    
