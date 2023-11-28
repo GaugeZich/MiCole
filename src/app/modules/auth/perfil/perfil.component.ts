@@ -50,6 +50,7 @@ export class PerfilComponent implements OnInit{
           alert("La información ha sido eliminada correctamente!");
           this.servicioAuth.cerrarSesion()
           this.router.navigate(['/login']);
+          this.servicioFirestore.eliminarAutenticador(this.info_cuenta?.uid)
         })
         .catch(error => {
           alert("Hubo un error al eliminar la información: \n" + error);
