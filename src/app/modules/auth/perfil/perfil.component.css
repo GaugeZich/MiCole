@@ -91,7 +91,27 @@ p{
 }
 
 .boton{
-    
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #1382ed;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.boton1{
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 75px;
+    margin: auto;
+    background-color: #e43737;
+    color: black;
+    font-size: x-large;
+    font-weight: 400;
 }
 
 .botones{
