@@ -136,6 +136,7 @@ mostrarModalEditar(usuarioSeleccionado: Usuario){
   borrarUsuario(){
     this.servicioCrud.eliminarUsuario(this.usuarioSeleccionado.uid)
     .then(respuesta => {
+      this.servicioFirestore.eliminarAutenticador(this.usuarioSeleccionado.uid)
       alert("El usuario ha sido eliminado correctamente");
     })
     .catch(error => {

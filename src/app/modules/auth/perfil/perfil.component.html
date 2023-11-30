@@ -1,0 +1,99 @@
+<!-- Navbar modificado para la vista de Administración -->
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para volver -->
+ 
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" routerLink="/cuenta">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <a routerLink="/inicio">
+        <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    <i class="material-icons person-icon">person</i>
+    <h1>Perfil</h1>
+</mat-toolbar>
+
+<!-- Perfil -->
+<div class="center">
+  <h1>Datos de la cuenta:</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p class="subrayado">Nombre:</p>
+      <p>{{info_cuenta?.nombre}}</p>
+      <br>
+
+      <p class="subrayado">Apellido:</p>
+      <p>{{info_cuenta?.apellido}}</p>
+      <br>
+
+      <p class="subrayado">Email:</p>
+      <p>{{info_cuenta?.email}}</p>
+      <br>
+      
+      <p class="subrayado">DNI:</p>
+      <p>{{info_cuenta?.dni}}</p>
+      <br>
+      
+      <p class="subrayado">SUBE:</p>
+      <p>{{info_cuenta?.sube}}</p>
+      <br>
+      
+      <p class="subrayado">Contraseña:</p>
+      <p>{{info_cuenta?.contrasena}}</p>
+      <br><br>
+      
+    </div>
+  </div>
+</div>
+
+<div class="botones">
+  <button class="boton" data-bs-toggle="modal" data-bs-target="#modalEditar">Cambiar datos</button>
+  <br><br>
+  <button class="boton1" (click)="confirmarBorrar()">Borrar cuenta</button>
+</div>
+
+<!-- Modal para editar -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar datos de la cuenta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.nombre}}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Apellido</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.apellido}}" >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input class="form-control" type="email" placeholder="{{info_cuenta?.email}}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">DNI:</label>
+            <input class="form-control" type="number" placeholder="{{info_cuenta?.dni}}" maxlength="8" minlength="8">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">N° de Sube:</label>
+            <input class="form-control" type="number" placeholder="{{info_cuenta?.sube}}"  maxlength="16" minlength="16">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Contraseña:</label>
+            <input class="form-control" type="text" placeholder="{{info_cuenta?.contrasena}}" minlength="6">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
