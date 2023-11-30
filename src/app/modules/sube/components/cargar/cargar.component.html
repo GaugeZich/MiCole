@@ -89,7 +89,7 @@
       
               </mat-grid-list>
     
-              <div align="center"><button class="pago">Mercado pago</button> </div> 
+              <div align="center" ><button class="pago" data-bs-toggle="modal" data-bs-target="#qr">Mercado pago</button> </div> 
           </div>
     
             <button mat-button matStepperPrevious>Volver</button>
@@ -115,6 +115,24 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancelar</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="qr" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../../../../../assets/qr-code.png" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
