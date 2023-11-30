@@ -78,3 +78,14 @@ hr{
 }
 
  /* CSS de Buscador: */
+  
+ .primarclase{
+    align-content: center;
+    background-color:#1382ED;
+    height: 400px;
+    width: 300px;
+    border: none;
+    border-radius: 15px;
+    justify-content: center;
+    margin-top: 50%;
+  }
