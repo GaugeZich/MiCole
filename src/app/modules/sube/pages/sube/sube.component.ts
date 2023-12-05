@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/models/usuario';
+import { CrudService } from 'src/app/modules/admin/services/crud.service';
 
 @Component({
   selector: 'app-sube',
   templateUrl: './sube.component.html',
   styleUrls: ['./sube.component.css']
 })
-export class SubeComponent {
+export class SubeComponent implements OnInit{
   opened = false;
 
   // Inicializo numero en 0 para que sea de type number y luego se pueda cambiar con las funciones
   numero = 0;
 
+  coleccionUsuarios: Usuario[] = [];
+
+  usuarioSeleccionado!: Usuario;
+
+  info_cuenta: Usuario | undefined;
+
   constructor(
+    public servicioCrud: CrudService,
     private router: Router,
     private auth: AngularFireAuth
   ){
@@ -54,5 +63,16 @@ export class SubeComponent {
   generarNumeroAleatorio(min: number, max: number, decimales: number): number {
     const factor = 10 ** decimales;
     return Math.floor(Math.random() * (max - min + 1) + min) / factor;
+  }
+  // 
+  async ngOnInit(): Promise<void>{
+    this.auth.currentUser.then((userLogeado) => {
+      this.servicioCrud.obtenerUsuario().subscribe(usuarios => {
+        if (userLogeado) {
+          this.info_cuenta = usuarios.find(usuario => usuario.uid === userLogeado.uid);
+          console.log(this.info_cuenta);
+        }
+      })
+    })    
   }
 }

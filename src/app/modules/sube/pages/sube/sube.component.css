@@ -1,3 +1,4 @@
+/* Sube: */
 .container{
     display: grid;
 }
@@ -54,7 +55,12 @@ h2{
     text-align: center;
 }
 
+.linea-superior,
+.linea-inferior {
+  display: block;
+}
 
+/* Navbar */
 .example-spacer {
     flex: 1 1 auto;
 }

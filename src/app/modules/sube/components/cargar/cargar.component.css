@@ -1,12 +1,14 @@
 .container{
     display: grid;
 }
+
 .center{
     margin: auto;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
+
 .cuadro1{
     text-size-adjust: 50px;
     border: 3px solid #1382ED;
@@ -16,6 +18,7 @@
     height: 80px;
     margin-bottom: 40px;
 }
+
 .p_cuadro1{
     font-size: 40px;
     margin-top: 7px;
@@ -34,8 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
+}
 
 .pago{
     margin-top: 1px;
@@ -49,13 +51,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
+.linea-superior,
+.linea-inferior {
+    display: block;
+}
 
-
-
-
-  .example-spacer {
+/* Navbar: */
+.example-spacer {
     flex: 1 1 auto;
 }
 

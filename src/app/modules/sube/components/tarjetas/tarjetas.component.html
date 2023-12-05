@@ -2,14 +2,12 @@
     <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
         <div div class="g-start-2 padding-top" style="grid-row: 2;">
 
-
-            <!--pruebaaaaaaaaaaaa-->
             <div class="container" align="center">
                 <h1>PAGAR</h1>
 
-                <form class="parte" >
-                 <mat-form-field>
-                     <mat-label>Cars</mat-label>
+
+                <mat-form-field>
+                    <mat-label>Cars</mat-label>
                     <select class="parte">
                     <option value="saab">tipo de tarjeta</option>
                     <option value="debito">debito</option>
@@ -17,42 +15,37 @@
                     </select>
                 </mat-form-field>
 
-              
-                  
-                   <!-- nombre del titular de la tarjeta-->
-                   <mat-form-field >
-                    <input  class="partedearriba"  placeholder="nombre del titular" name="nombre del titular" > 
-               </mat-form-field>
 
-               <!-- numero de la tarjeta -->
-               <mat-form-field >
-                   <input class="partedearriba" placeholder="numero de la tarjeta" name="nombre del titular" > 
-              </mat-form-field>
+                <!-- nombre del titular de la tarjeta -->
+                <mat-form-field>
+                <mat-label>Nombre del titular</mat-label>
+                <input matInput class="partedearriba" placeholder="Nombre del titular" name="nombre del titular" type="text">
+                </mat-form-field>
 
-                
-              <mat-form-field >
-                <input class="partedearriba"  placeholder="Fecha de caducidad" name="fecha de caducidad" > 
-            </mat-form-field>
-            
-            <mat-form-field >
-            <input class="partedearriba"  placeholder ="Codigo de seguridad" name="codigo de seguridad" >
-        </mat-form-field>
+                <!-- numero de la tarjeta -->
+                <mat-form-field>
+                <mat-label>Número de la tarjeta</mat-label>
+                <input matInput class="partedearriba" placeholder="Número de la tarjeta" name="nombre del titular" type="number" maxlength="16">
+                </mat-form-field>
 
-            </form>
+                <!-- Fecha de caducidad -->
+                <mat-form-field>
+                <mat-label>Fecha de caducidad</mat-label>
+                <input matInput class="partedearriba" placeholder="Fecha de caducidad" name="fecha de caducidad" type="date">
+                </mat-form-field>
 
+                <!-- Codigo de seguridad -->
+                <mat-form-field>
+                <mat-label>Código de seguridad</mat-label>
+                <input matInput class="partedearriba" placeholder="Código de seguridad" name="codigo de seguridad" type="number" maxlength="3">
+                </mat-form-field>
 
-             
                 <!--boton de volver-->
                 <br>
-
                 <div>
-                    <button mat-button class="boton" style="  color: white;" >finalizar pago</button>
+                    <button mat-button class="boton" style="  color: white;" routerLink="/sube">finalizar pago</button>
                 </div>
             </div>
-
-
-
-            
         </div>
     </div>
 </div>

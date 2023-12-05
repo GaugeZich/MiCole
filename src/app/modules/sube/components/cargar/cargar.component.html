@@ -53,7 +53,10 @@
             <ng-template matStepLabel>1 N° SUBE</ng-template>
             <ng-template matStepContent>
           <div class="cuadro1">
-             <p class="p_cuadro1">XXXX-XXXX<br><br>XXXX-XXXX</p>
+             <p class="p_cuadro1">
+              <span class="linea-superior">{{info_cuenta?.sube?.slice(0, 4)}} - {{info_cuenta?.sube?.slice(4, 8)}}</span><br>
+              <span class="linea-inferior">{{info_cuenta?.sube?.slice(8, 12)}} - {{info_cuenta?.sube?.slice(12, 16)}}</span>
+             </p>
           </div>
               <button mat-button matStepperNext>Siguiente</button>
             </ng-template>
