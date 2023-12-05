@@ -49,8 +49,11 @@
     <div class="center">
         <h2>N° SUBE</h2>
         <div class="cuadro1">
-            <p class="p_cuadro1">XXXX-XXXX<br><br>XXXX-XXXX</p>
-        </div>
+            <p class="p_cuadro1">
+              <span class="linea-superior">{{info_cuenta?.sube?.slice(0, 4)}} - {{info_cuenta?.sube?.slice(4, 8)}}</span><br>
+              <span class="linea-inferior">{{info_cuenta?.sube?.slice(8, 12)}} - {{info_cuenta?.sube?.slice(12, 16)}}</span>
+            </p>
+          </div>
         <h2>SALDO</h2>
         <div class="cuadro2">
             <p class="p_cuadro2">{{numero}}$</p>
