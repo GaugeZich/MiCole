@@ -1,0 +1,93 @@
+<mat-toolbar style="background-color: #1382ED;">
+    <!-- Boton para sidebar -->
+  
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <a routerLink="/inicio">
+      <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
+    </a>
+    <span class="example-spacer"></span> <!-- Espaciador -->
+    <h1>Nosotros te llevamos!</h1>
+  </mat-toolbar>
+  
+  
+  <mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened">
+      <div class="btn-group-sidenav">
+          <button class="button_sidenav" (click)="entrarCuenta()">Cuenta</button>
+          <button class="button_sidenav" routerLink="/configuracion">Configuración</button>
+          <button class="button_sidenav" routerLink="/favoritos">Favorito</button>
+          <button class="button_sidenav">Ayuda</button>
+      </div>
+      
+       <!-- Espaciador -->
+      <div class="spacer-top">
+          <hr>
+          <div class="center_navbar">
+              <span class="texto_contacto">Contacto:</span>
+              <br>
+              <span>
+                  micoleappcipo.gmail.com
+                  <br>
+                  +54 299 XXX XXXX
+                  <br>
+                  XXXXXXXXXXXXXXXX
+              </span>
+          </div>
+      </div>
+  </mat-sidenav>
+    <mat-sidenav-content>
+  
+    
+    <!-- Buscador 1-->
+    <div class="div">
+        <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
+            <div div class="g-start-2 padding-top center" style="grid-row: 2;">
+                <!--titulo del buscador-->
+                <div class="cuadro1">
+                    <p class="cuadro2">La más cercana del lugar</p>
+                </div>
+                   <!--titulo del buscador-->
+                <div class="cuadro">
+                    <br>
+                    <!--Imagen del mapa-->
+                    <img src="../../../../../assets/mapa.png" alt="" height="200" width="230" >
+                    <!--Inform-->
+                    <p class="letra">Hora estimada de llegada : *tiempo*</p>
+                    <p class="letra">Parada: *calle*</p>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- buscador 2 -->
+    <div class="div">
+        <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
+            <div div class="g-start-2 padding-top center" style="grid-row: 2;">
+                    <!--titulo del buscador-->
+                <div class="cuadro1">
+                    <p class="cuadro2">Según tu ubicación</p>
+                </div>
+                     <!--titulo del buscador-->
+                <div class="cuadro">
+                    <br>
+                    <!--Imagen del mapa-->
+                    <img src="../../../../../assets/mapa.png" alt="" height="200" width="230" >
+                      <!--Inform-->
+                    <p class="letra">Hora estimada de llegada : *tiempo*</p>
+                    <p class="letra">Parada: *calle*</p>
+
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+  
+  

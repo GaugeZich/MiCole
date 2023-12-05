@@ -21,6 +21,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { BuscadorModule } from './modules/buscador/buscador.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     RecorridosModule,
     SubeModule,
     InformacionModule,
-    ConfiguracionRoutingModule
+    ConfiguracionRoutingModule,
+    BuscadorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
