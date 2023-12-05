@@ -9,14 +9,20 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent {
+  // Variable para el sidebar
   opened = false;
   
   constructor(
+    // Importaciones de servicios
     public servicioCrud: CrudService,
     private router: Router,
     private auth: AngularFireAuth
   ){}
 
+  /*
+  Esta funcion determina si el usuario esta conectado, si es asi al darle click al boton,
+  te llevara a la vista de "cuenta", de lo contrario te llevara al login
+  */
   entrarCuenta(){
     this.auth.authState.subscribe(usuarios => {
       if(usuarios) {
