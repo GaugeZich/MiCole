@@ -11,31 +11,36 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit{
-  opened = false;
-  admin = false;
+  // Variables:
+  opened = false; // Para el sidebar
+  admin = false; // Para verificar si el usuario es admin
 
 
   constructor(
+    // Importaciones de los servicios
     private authService: AuthService,
     private crud: CrudService,
     private router: Router,
     private auth: AngularFireAuth
   ){}
 
+  // ngOnInit: Se inicializa al abrir el componente
   async ngOnInit(): Promise<void>{
+    //Obtiene al usuario y verifica si es admin, recorriendo todos los usuarios comparando sus ID's
     this.authService.auth.currentUser.then((userLogeado) => {
       this.crud.obtenerUsuario().subscribe(usuarios => {
         if (userLogeado) {
-
-
           const isAdmin = usuarios.find(usuario => usuario.uid === userLogeado.uid && usuario.rol === 'admin');
-          this.admin = isAdmin !== undefined;
+          this.admin = isAdmin !== undefined; // Asigna verdadero para mostrar el boton de administrador
         }
       })
     })    
   }
   
-
+  /*
+  Verifica si hay un usuario conectado, si esto es asi el boton de "cuenta"
+  lo llevara a "/cuenta", de lo contrario, lo llevara al "/login"
+  */
   entrarCuenta(){
     this.auth.authState.subscribe(usuarios => {
       if(usuarios) {
@@ -46,6 +51,10 @@ export class InicioComponent implements OnInit{
     })
   }
 
+    /*
+  Verifica si hay un usuario conectado, si esto es asi el boton de "sube"
+  lo llevara a "/sube", de lo contrario, lo llevara al "/login"
+  */
   entrarSube(){
     this.auth.authState.subscribe(usuarios => {
       if(usuarios) {
