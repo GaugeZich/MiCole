@@ -17,6 +17,7 @@
   height: 430px;          /* Alto de píxeles */
   background: #1382ED;        /* Fondo de color  */
   border-radius: 15px;
+  margin-top: 25px;
 }
 
 .example-container{
@@ -49,9 +50,18 @@
   margin: auto;
   background-color: #1382ED;
   color: white;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
+.boton1{
+  border: none;
+  border-radius: 15px;
+  width: 130px;
+  margin: auto;
+  background-color: #1382ED;
+  color: white;
+  margin-top: 50px;
+}
 h1{
  font-weight: 100;
  color: white;
