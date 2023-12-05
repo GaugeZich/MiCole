@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SubeComponent } from './pages/sube/sube.component';
-
 import { SubeRoutingModule } from './sube-routing.module';
 
 // Importaciones de angular material
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -23,7 +23,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { CargarComponent } from './components/cargar/cargar.component';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
-
 
 
 
@@ -45,19 +44,24 @@ import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
     MatInputModule,
     MatSidenavModule,
     RouterModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ],
   exports: [
     SubeComponent,
+    CommonModule,
+    SubeRoutingModule,
+    MatGridListModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    RouterModule,
     MatSidenavModule,
+    RouterModule,
     MatStepperModule,
+    MatSelectModule
   ]
 })
 export class SubeModule { }
