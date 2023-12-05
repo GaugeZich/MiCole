@@ -6,6 +6,7 @@ import { SubeRoutingModule } from './sube-routing.module';
 
 // Importaciones de angular material
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatStepperModule} from '@angular/material/stepper';
 
 // Importaciones para el navbar:
 import {MatIconModule} from '@angular/material/icon';
@@ -20,10 +21,17 @@ import {MatInputModule} from '@angular/material/input';
 // Importaciones para sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { CargarComponent } from './components/cargar/cargar.component';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+
+
+
 
 @NgModule({
   declarations: [
-    SubeComponent
+    SubeComponent,
+    CargarComponent,
+    TarjetasComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +44,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     MatInputModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
+    MatStepperModule
   ],
   exports: [
     SubeComponent,
@@ -47,7 +56,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     MatInputModule,
     RouterModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatStepperModule,
   ]
 })
 export class SubeModule { }
