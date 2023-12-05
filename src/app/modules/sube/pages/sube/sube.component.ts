@@ -10,10 +10,14 @@ import { Router } from '@angular/router';
 export class SubeComponent {
   opened = false;
 
+  numero = 0;
+
   constructor(
     private router: Router,
     private auth: AngularFireAuth
-  ){}
+  ){
+    this.cargaDeSube();
+  }
   entrarCuenta(){
     this.auth.authState.subscribe(usuarios => {
       if(usuarios) {
@@ -22,5 +26,15 @@ export class SubeComponent {
         this.router.navigate(['/login'])
       }
     })
+  }
+
+  cargaDeSube() {
+    const nuevoNumero = this.generarNumeroAleatorio(10, 9999, 1);
+    this.numero = nuevoNumero;
+  }
+
+  generarNumeroAleatorio(min: number, max: number, decimales: number): number {
+    const factor = 10 ** decimales;
+    return Math.floor(Math.random() * (max - min + 1) + min) / factor;
   }
 }
