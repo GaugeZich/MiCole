@@ -11,16 +11,17 @@ import { Usuario } from 'src/app/models/usuario';
 })
 
 export class RegisterComponent {
-  hide = true; // input de contraseña
+  // Input de contraseña
+  hide = true;
   
-  //defino de forma publica los servicios y el ruteo
+  // Defino de forma publica los servicios y el ruteo
   constructor(
     public servicioAuth:AuthService,
     public servicioFirestore: FirestoreService,
     public router: Router
   ){}
 
-  //importo el modelo
+  // Importo el modelo
   usuarios: Usuario={
     uid: '', // id para autentificacion
     sube: '', //numero de sube 
@@ -33,40 +34,39 @@ export class RegisterComponent {
     rol:'usuario' //confirmar el rol que cumple
   }
 
-  //es el uid para conectar con la base de datos 
+  // Es el uid para conectar con la base de datos 
   uid= '';
 
-  //creamos la funcion para registrase 
+  // Creamos la funcion para registrase 
   async Registrarse(){
+    // Guardamos las credenciales (email y contraseña)
     const credenciales ={
       email: this.usuarios.email,
       contrasena: this.usuarios.contrasena
     }
-
+    // Llamamos la función registrar del servicio Auth
     const res= await this.servicioAuth.registrar(credenciales.email, credenciales.contrasena)
     .then(res=>{
-      //alerta de que un asuario se pudo registar 
+      // Alerta de que un asuario se pudo registar 
       alert("Usted se ha registrado con éxito :)");
-      //llamamos uan nueva ruta para redirigirnos 
+      // Llamamos una nueva ruta para redirigirnos 
       this.router.navigate(["/login"]);
     })
     .catch(error=>
       alert("Hubo un problema al ingresar el nuevo usuario:( \n"+error)
     );
 
-    //se crea una constante del UID para el UID que obtengamos 
+    // Se crea una constante del UID para el UID que obtengamos 
     const uid = await this.servicioAuth.getUid();   
 
-    //hacemos referencia del uid con el usuario 
+    // Hacemos referencia del uid con el usuario 
     this.usuarios.uid=uid; 
 
-    //llamamos a la funcion
+    // Llamamos a la funcion
     this.guardarUser();
-
-    
   }
 
-  //creamos la funcion asincrona para guardar los usuarios
+  // Función asincrona para guardar los usuarios en firebase
   async guardarUser(){
     this.servicioFirestore.agregarUsuario(this.usuarios,this.usuarios.uid)
     .then(res =>{
@@ -76,7 +76,9 @@ export class RegisterComponent {
       console.log('Error =>', error);
     })
   }
+  // ngOnInit: Se inicializa al abrir el componente
   async ngOnInit(){
+    // Obtiene y muestra el UID
     const uid = await this.servicioAuth.getUid();
     console.log(uid);
   }
