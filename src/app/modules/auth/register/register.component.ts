@@ -52,6 +52,7 @@ export class RegisterComponent {
       // Llamamos una nueva ruta para redirigirnos 
       this.router.navigate(["/login"]);
     })
+    //por si el usuario no se pudo registrar
     .catch(error=>
       alert("Hubo un problema al ingresar el nuevo usuario:( \n"+error)
     );
