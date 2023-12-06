@@ -1,11 +1,8 @@
 /* formularios*/
 .example-form {
-
-  min-width: 200px;
-  max-width: 250px;
+  min-width: 200px; /*anchura minima*/
+  max-width: 250px; /*anchura maxima*/
   width: 100%;
-  
-  
 }
 
 .example-full-width {
@@ -14,12 +11,12 @@
 
 /* button*/
 section {
-  display: table;
+  display: table; /*para que funcione como un contenedor */
 }
 
 .example-label {
-  display: table-cell;
-  font-size: 14px;
+  display: table-cell; /*para que se muestre como celda de tabla en el contenedor */
+  font-size: 14px; 
   margin-left: 8px;
   min-width: 120px;
 }
@@ -36,7 +33,7 @@ section {
 .example-flex-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /*se ajusta de forma automatica*/
 }
 
 .example-button-container {
@@ -58,17 +55,16 @@ section {
 
 .boton1{
   width: 50%;
-  
 }
 
 input{
   width: 80%;
   border: none;
   padding: 10px px; 
-  cursor: pointer; 
+  cursor: pointer; /*para que cuando se pase el mouse por encima se muestre como el cursor*/
   border-radius: 6px;
-  
 }
+
 h1{
   color: aliceblue;
   padding-top: 15px;
