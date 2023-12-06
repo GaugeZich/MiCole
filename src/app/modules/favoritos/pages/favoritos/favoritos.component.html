@@ -1,21 +1,20 @@
 <!-- Navbar importado de angular material -->
+
 <mat-toolbar style="background-color: #1382ED;">
     <!-- Boton para sidebar -->
-  
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="opened=!opened">
       <mat-icon>menu</mat-icon>
     </button>
-  
     <a routerLink="/inicio">
       <img src="./assets/logo.png" alt="Logo de MiCole" class="logo">
     </a>
     <span class="example-spacer"></span> <!-- Espaciador -->
-    
+    <!--titulo-->
     <h1>Favoritos</h1>
-  </mat-toolbar>
+</mat-toolbar>
   
-  
-  <mat-sidenav-container>
+<!--sidenav-->
+<mat-sidenav-container>
   <mat-sidenav [(opened)]="opened">
       <div class="btn-group-sidenav">
           <button class="button_sidenav" (click)="entrarCuenta()">Cuenta</button>
@@ -40,11 +39,9 @@
           </div>
       </div>
   </mat-sidenav>
+
   <mat-sidenav-content>
-  
-  
     <!-- Favoritos -->
-    
     <div class="container text-center">
         <div class="row">
           <div class="col">
@@ -63,7 +60,5 @@
           </div>
         </div>
     </div>
-    
-  
   </mat-sidenav-content>
-  </mat-sidenav-container>
+</mat-sidenav-container>
