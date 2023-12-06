@@ -4,12 +4,14 @@
             <div class="container ">
                 <div class="conteiner">
                     <div class="row ">
+                        <!--Titulo -->
                         <h1>REGISTRO</h1>
                         <div class="container text-center">
 
                             <!--Nº de sube-->
                             <div class="row row-cols-1 padding">
                                 <div class="col"><input placeholder="Nº de sube" class="input" [(ngModel)]="usuarios.sube" #input2 minlength="6" matInput required></div>
+                            <!--el value.lenght sirve para que haya un minimo de caracteres-->
                                 <mat-hint align="start">16/{{input2.value.length}}</mat-hint>
                             </div>
 
@@ -37,6 +39,7 @@
                             <!--contrasena-->
                             <div class="row row-cols-1 padding">
                                 <div class="col"><input placeholder="Ingrese su contraseña" class="input" [(ngModel)]="usuarios.contrasena" [type]="hide ? 'password' : 'text'" #input1 minlength="6"  matInput required> </div>
+                                <!--el value.lenght sirve para que haya un minimo de caracteres-->
                                 <mat-hint align="start">Mínimo:6/{{input1.value.length}}</mat-hint>
                             </div>
 
