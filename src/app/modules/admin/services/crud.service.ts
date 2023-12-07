@@ -130,7 +130,7 @@ export class CrudService {
   // CRUD para tarifa:
 
   // CRUD -> Función para obtener la tarifa
-    /*
+  /*
     snapshotChanges -> Toma captura del estado de los datos
     pipe -> funciona como tuberia, retorna el nuevo arreglo
     map -> "mapea" o recorre esa nueva información
