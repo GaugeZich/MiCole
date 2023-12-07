@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tarjetas.component.css'],
 })
 export class TarjetasComponent {
-  value = 'Clear me';
+
 }

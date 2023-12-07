@@ -10,10 +10,14 @@ import { Router } from '@angular/router';
 export class CuentaComponent {
 
   constructor(
+    // Importaciones del servicio
     private servicioAuth: AuthService,
     private router: Router,
   ){}
 
+  /*
+  Funcion para cerrar sesión de la cuenta llamando la funcion del servicioAuth
+  */
   async salir(){
     const res = await this.servicioAuth.cerrarSesion()
     .then(res => {

@@ -11,10 +11,13 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
   styleUrls: ['./administrar.component.css']
 })
 export class AdministrarComponent {
+  // Arreglo para la colección de usuarios
   coleccionUsuarios: Usuario[] = [];
 
+  // Variable para el usuario seleccionado
   usuarioSeleccionado!: Usuario;
 
+  // Formulario para agregar y editar usuarios
   usuario = new FormGroup({
     sube: new FormControl('',Validators.required),
     nombre: new FormControl('',Validators.required),
@@ -27,15 +30,19 @@ export class AdministrarComponent {
   })
 
   constructor(
+    // Importamos los servicios
     public servicioCrud: CrudService,
     public servicioFirestore: FirestoreService,
     public servicioAuth: AuthService
   ){}
 
+  // ngOnInit: Se inicializa al abrir el componente
   async ngOnInit(): Promise<void>{
+    // Obtiene la coleccion de usuarios con el servicio CRUD
     this.servicioCrud.obtenerUsuario().subscribe(usuario => {
       this.coleccionUsuarios = usuario
     });
+    // Obtiene y muestra por consola el UID del usuario autenticado
     const uid = await this.servicioAuth.getUid();
     console.log(uid);
   }
@@ -56,11 +63,14 @@ export class AdministrarComponent {
   //es el uid para conectar con la base de datos 
   uid= '';
 
+  // Función asyncrona para agregar un usuario
   async agregarUsuario(){
+    // Guarda las credenciales
     const credenciales = {
       email: this.usuarios.email,
       contrasena: this.usuarios.contrasena
     }
+    // Registra el nuevo usuario con el servicio Auth
     const res = await this.servicioAuth.registrar(credenciales.email, credenciales.contrasena)
     .then(res => {
       alert("Ha agregado un nuevo usuario con exito")
@@ -79,6 +89,7 @@ export class AdministrarComponent {
     this.guardarUser()
   }
 
+  // Función asyncrona para guardar al usuario en firebase
   async guardarUser(){
     this.servicioFirestore.agregarUsuario(this.usuarios,this.usuarios.uid)
     .then(res => {
@@ -110,6 +121,7 @@ mostrarModalEditar(usuarioSeleccionado: Usuario){
     })
   }
 
+  // Función para editar un usuario
   editarUsuario(){
     let datos: Usuario = {
       uid: this.usuarioSeleccionado.uid,
@@ -122,8 +134,8 @@ mostrarModalEditar(usuarioSeleccionado: Usuario){
       contrasena: this.usuario.value.contrasena!,
       rol: this.usuario.value.rol!,
       contrasena1: this.usuario.value.contrasena1!
-    }
-
+  }
+  // Edita al usuario referenciando al servicio CRUD
   this.servicioCrud.editarUsuario(this.usuarioSeleccionado.uid, datos)
   .then(usuario => {    
     alert("El usuario fue modificado con exito.");
@@ -133,9 +145,12 @@ mostrarModalEditar(usuarioSeleccionado: Usuario){
   })
   }
 
+  // Función para borrar a un usuario
   borrarUsuario(){
+    // Elimina al usuario llamando al servicio CRUD
     this.servicioCrud.eliminarUsuario(this.usuarioSeleccionado.uid)
     .then(respuesta => {
+      // Elimina el autenticador a traves del servicio de firestore
       this.servicioFirestore.eliminarAutenticador(this.usuarioSeleccionado.uid)
       alert("El usuario ha sido eliminado correctamente");
     })

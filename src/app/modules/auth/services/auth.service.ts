@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root'
 })
 export class AuthService {
+  authState: any;
   // referenciar Autentificación de Firebase
   constructor(public auth: AngularFireAuth) { }
 

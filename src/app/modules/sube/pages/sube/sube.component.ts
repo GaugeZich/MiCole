@@ -10,18 +10,23 @@ import { CrudService } from 'src/app/modules/admin/services/crud.service';
   styleUrls: ['./sube.component.css']
 })
 export class SubeComponent implements OnInit{
+  // Variable para el sidebar
   opened = false;
 
   // Inicializo numero en 0 para que sea de type number y luego se pueda cambiar con las funciones
   numero = 0;
 
+  // Arreglo que almacenará la colección de usuarios
   coleccionUsuarios: Usuario[] = [];
 
+  // Variable que representa al usuario seleccionado
   usuarioSeleccionado!: Usuario;
 
+  // Variable para guardar la información del usuario
   info_cuenta: Usuario | undefined;
 
   constructor(
+    // Importaciones de los servicios
     public servicioCrud: CrudService,
     private router: Router,
     private auth: AngularFireAuth
@@ -64,13 +69,17 @@ export class SubeComponent implements OnInit{
     const factor = 10 ** decimales;
     return Math.floor(Math.random() * (max - min + 1) + min) / factor;
   }
-  // 
+  // ngOnInit: Se inicializa al abrir el componente
   async ngOnInit(): Promise<void>{
+    /*
+    Obtiene al usuario conectado y recorre todo los usuarios
+    comparando sus ID's para encontrar el usuario conectado
+    */
     this.auth.currentUser.then((userLogeado) => {
       this.servicioCrud.obtenerUsuario().subscribe(usuarios => {
         if (userLogeado) {
+          // Guarda toda la información de ese usuario conectado
           this.info_cuenta = usuarios.find(usuario => usuario.uid === userLogeado.uid);
-          console.log(this.info_cuenta);
         }
       })
     })    

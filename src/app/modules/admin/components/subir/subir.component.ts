@@ -13,9 +13,10 @@ export class SubirComponent {
   // Creamos una coleccion que esta basada en la interfaz de información
   coleccionInformacion: Informacion[] = [];
 
+  // Arreglo para la tarifa única 
   tarifaUnica: Tarifa[] = [];
 
-  // Formulario
+  // Formulario para la información
   informacion = new FormGroup({
     titulo: new FormControl('',Validators.required),
     razon: new FormControl('',Validators.required)
@@ -27,9 +28,11 @@ export class SubirComponent {
   })
 
   constructor(
+    // Importamos el servicio CRUD
     public servicioCrud: CrudService
   ){}
 
+  // Función asyncrona para agregar la información
   async agregarInformacion(){
     if(this.informacion.valid){
       let nuevaInformacion: Informacion = {
@@ -37,7 +40,7 @@ export class SubirComponent {
         titulo: this.informacion.value.titulo!,
         razon: this.informacion.value.razon!
       }
-
+      // Crea la información con el servicio CRUD
       await this.servicioCrud.crearInformacion(nuevaInformacion)
       .then(informacion =>{
         alert("La información se subio correctamente!")
@@ -48,13 +51,14 @@ export class SubirComponent {
     }
   }
 
+  // Función para actualizar la tarifa
   actualizarTarifa(){
     if(this.tarifa.valid){
       let nuevaTarifa: Tarifa = {
-        idTarifa: '1',
+        idTarifa: '1', // Siempre es ID 1 ya que es unico
         tarifa: this.tarifa.value.tarifa!
       }
-
+      // Modifica la tarifa con el servicio CRUD
       this.servicioCrud.editarTarifa('1',nuevaTarifa)
       .then(tarifa => {
         alert("La tarifa ha sido modificada con exito")
@@ -66,6 +70,7 @@ export class SubirComponent {
   }
   /* Inicializa con ngOnInit y hace uso de obtenerTarifa del servicio para obtener la colección */
   ngOnInit(): void{
+    // Obtiene la tarifa y la guarda para mostrarla en el HTML por interpolación
     this.servicioCrud.obtenerTarifa().subscribe(tarifa => {
       this.tarifaUnica = tarifa;
     })

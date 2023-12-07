@@ -2,36 +2,37 @@
 .conteiner{
   display: flex;
   padding: 10px;
-  text-align: center;
+  text-align: center; /*para que el texto este alineado al centro*/
   justify-content: center;
   align-self: center; 
 }
 
 .boton{
-  width: 120px;
-  margin: auto;
+  width: 120px; /*ancho*/
+  margin: auto; /*largo*/
 }
 
 .container{
-  width: 275px;           /* Ancho de píxeles */
-  height: 430px;          /* Alto de píxeles */
+  width: 275px;           /* Ancho */
+  height: 430px;          /* largo*/
   background: #1382ED;        /* Fondo de color  */
-  border-radius: 15px;
+  border-radius: 15px; /*esquinas redondeadas*/
+  margin-top: 25px;
 }
 
 .example-container{
-  border-radius: 25px;
+  border-radius: 25px; /*esquinas redondeadas*/
 }
 
-.padding{
-  padding-bottom: 20px;
+.padding{ 
+  padding-bottom: 20px; /*para modificar el relleno*/
 }
 .padding-top{
   padding-top: 40px;
 }
 
 .div{
-  justify-content: center;
+  justify-content: center; 
 }
 
 .input{
@@ -43,6 +44,16 @@
 }
 
 .boton{
+  border: none; /*para que no tenga border*/
+  border-radius: 15px;
+  width: 130px;
+  margin: auto;
+  background-color: #1382ED; /*color de fonde*/
+  color: white;
+  margin-top: 80px;
+}
+
+.boton1{
   border: none;
   border-radius: 15px;
   width: 130px;
@@ -51,10 +62,9 @@
   color: white;
   margin-top: 50px;
 }
-
 h1{
- font-weight: 100;
- color: white;
+ font-weight: 100; /*para la medida de la letra*/
+ color: white; /*para el color de la letra*/
 }
 
 

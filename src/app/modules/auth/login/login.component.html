@@ -1,55 +1,45 @@
 <div class="div">
     <div class="grid text-center" style="--bs-rows: 3; --bs-columns: 3;">
         <div div class="g-start-2 padding-top" style="grid-row: 2;">
-
-
-            <!--pruebaaaaaaaaaaaa-->
             <div class="container" align="center">
+                <!--Titulo-->
                 <h1>BIENVENIDO</h1>
-                <!--formularios-->
-                <!-- email -->
-
                 <form class="example-form  " style="width: 50" >
+                    <!-- para ingresar el email -->
                     <mat-form-field class="example-full-width">
                         <input matInput placeholder="Email" [(ngModel)]="usuarios.email" name="email">
                     </mat-form-field>
 
-                    <!-- contraseña -->
+                    <!-- para ingresar la contraseña -->
                     <mat-form-field class="example-full-width">
-                        
-
                         <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" [(ngModel)]="usuarios.contrasena" name="password">
+                        <!--Boton para esconder/visualizar la contraseña-->
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
                     </mat-form-field>
-                   
                 </form>
-                <!--boton-->
+
+                <!--boton para iniciar sesión-->
                 <section>
                     <div>
                         <button mat-button class="iniciar" (click)="iniciar()">INICIAR SESIÓN</button>
                     </div>
                 </section>
                 <br>
-
                 <!--links-->
                 <div>
+                    <!--Link de olvido de contraseña-->
                     <button mat-button class="boton1" style="  color: white;">¿Olvidaste tu contraseña?</button>
-
+                    <!--Link para crear nuevo usuario-->
                     <button mat-button class="boton2" style="  color: white;" routerLink="/register">Crear cuenta</button>
                 </div>
-                <!--boton de volver-->
                 <br>
-
                 <div>
+                    <!--boton de volver-->
                     <button mat-button class="boton" style="  color: white;" routerLink="/inicio">Volver</button>
                 </div>
             </div>
-
-
-
-            
         </div>
     </div>
 </div>
